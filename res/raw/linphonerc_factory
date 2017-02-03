@@ -53,9 +53,6 @@ username_min_length=1
 username_regex=^[a-z0-9_.\-]*$
 xmlrpc_url=https://sip3.linphone.org:444/wizard.php
 
-[nat_policy_0]
-ref=HEmx1iX7HsRpVpn
-
 [audio_codec_0]
 mime=opus
 rate=48000

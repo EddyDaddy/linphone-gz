@@ -166,6 +166,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 			finish();
 			return;
 		} else if (savedInstanceState == null && (useFirstLoginActivity && LinphonePreferences.instance().isFirstLaunch())) {
+			LinphonePreferences.instance().setIceEnabled(true);
 			if (LinphonePreferences.instance().getAccountCount() > 0) {
 				LinphonePreferences.instance().firstLaunchSuccessful();
 			} else {
