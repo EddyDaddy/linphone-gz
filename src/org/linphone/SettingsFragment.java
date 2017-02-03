@@ -864,8 +864,8 @@ public class SettingsFragment extends PreferencesListFragment {
 		deviceRingtone.setChecked(mPrefs.isDeviceRingtoneEnabled());
 		autoAnswer.setChecked(mPrefs.isAutoAnswerEnabled());
 
-		rfc2833.setChecked(false);
-		sipInfo.setChecked(false);
+		rfc2833.setChecked(true);
+		sipInfo.setChecked(true);
 
 		setPreferenceDefaultValueAndSummary(R.string.pref_voice_mail_key, mPrefs.getVoiceMailUri());
 	}
