@@ -66,19 +66,19 @@ enabled=0
 mime=SILK
 rate=16000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_2]
 mime=speex
 rate=16000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_3]
 mime=speex
 rate=8000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_4]
 mime=PCMU
@@ -96,67 +96,67 @@ enabled=1
 mime=GSM
 rate=8000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_7]
 mime=G722
 rate=8000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_8]
 mime=iLBC
 rate=8000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_9]
 mime=G729
 rate=8000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_10]
 mime=iSAC
 rate=16000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_11]
 mime=speex
 rate=32000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_12]
 mime=SILK
 rate=8000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_13]
 mime=SILK
 rate=12000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_14]
 mime=SILK
 rate=24000
 channels=1
-enabled=1
+enabled=0
 
 [audio_codec_15]
 mime=L16
 rate=44100
 channels=2
-enabled=1
+enabled=0
 
 [audio_codec_16]
 mime=L16
 rate=44100
 channels=1
-enabled=1
+enabled=0
 
 [video_codec_0]
 mime=VP8
