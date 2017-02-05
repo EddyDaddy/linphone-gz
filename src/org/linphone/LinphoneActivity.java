@@ -735,7 +735,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 		if(hide){
 			mTabBar.setVisibility(View.GONE);
 		} else {
-			mTabBar.setVisibility(View.VISIBLE);
+			mTabBar.setVisibility(View.GONE);
 		}
 	}
 
@@ -747,7 +747,6 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 	public void selectMenu(FragmentsAvailable menuToSelect) {
 		currentFragment = menuToSelect;
 		resetSelection();
-
 		switch (menuToSelect) {
 		case HISTORY_LIST:
 		case HISTORY_DETAIL:
