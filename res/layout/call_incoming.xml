@@ -12,7 +12,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="40dp"
 		tools:layout="@layout/status" />
-
+	
 	<RelativeLayout
 		android:id="@+id/top_bar"
 		android:background="@color/colorF"
@@ -101,7 +101,8 @@
 			android:layout_weight="1"
 			android:padding="12dp"/>
 
-		<LinearLayout
+		<!-- 滑动接听改为点击接听 -->
+		<!-- <LinearLayout
 			android:id="@+id/acceptUnlock"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -130,7 +131,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:alpha="0.2"/>
-		</LinearLayout>
+		</LinearLayout> -->
 
 		<ImageView
 			android:id="@+id/accept"
@@ -142,7 +143,8 @@
 			android:layout_weight="1"
 			android:padding="12dp"/>
 
-		<LinearLayout
+		<!-- 滑动拒接改为点击 -->
+		<!-- <LinearLayout
 			android:id="@+id/declineUnlock"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -173,7 +175,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"/>
 
-		</LinearLayout>
+		</LinearLayout> -->
 	</LinearLayout>
 
 </RelativeLayout>

@@ -51,8 +51,8 @@ public class CallIncomingActivity extends LinphoneGenericActivity implements Lin
 	private ImageView contactPicture, accept, decline;
 	private LinphoneCall mCall;
 	private LinphoneCoreListenerBase mListener;
-	private LinearLayout acceptUnlock;
-	private LinearLayout declineUnlock;
+	//private LinearLayout acceptUnlock;
+	//private LinearLayout declineUnlock;
 	private boolean alreadyAcceptedOrDeniedCall;
 	private float answerX;
 	private float declineX;
@@ -86,8 +86,8 @@ public class CallIncomingActivity extends LinphoneGenericActivity implements Lin
 
 		final int screenWidth = getResources().getDisplayMetrics().widthPixels;
 
-		acceptUnlock = (LinearLayout) findViewById(R.id.acceptUnlock);
-		declineUnlock = (LinearLayout) findViewById(R.id.declineUnlock);
+		//acceptUnlock = (LinearLayout) findViewById(R.id.acceptUnlock);
+		//declineUnlock = (LinearLayout) findViewById(R.id.declineUnlock);
 
 		accept = (ImageView) findViewById(R.id.accept);
 		decline = (ImageView) findViewById(R.id.decline);
