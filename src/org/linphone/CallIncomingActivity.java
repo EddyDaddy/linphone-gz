@@ -94,15 +94,24 @@ public class CallIncomingActivity extends LinphoneGenericActivity implements Lin
 		accept.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
-				decline.setVisibility(View.GONE);
-				acceptUnlock.setVisibility(View.VISIBLE);
-
+				/*decline.setVisibility(View.GONE);
+				acceptUnlock.setVisibility(View.VISIBLE);*/
+				//滑动接听修改为点击接听  zhoujw
+				answer();
+			}
+		});
+		decline.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				/*accept.setVisibility(View.GONE);
+				acceptUnlock.setVisibility(View.VISIBLE);*/
+				//滑动拒接修改为点击拒接  zhoujw
+				decline();
 			}
 		});
 
 
-		accept.setOnTouchListener(new View.OnTouchListener() {
+		/*accept.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View view, MotionEvent motionEvent) {
 				float curX;
@@ -130,9 +139,9 @@ public class CallIncomingActivity extends LinphoneGenericActivity implements Lin
 				}
 				return true;
 			}
-		});
+		});*/
 
-		decline.setOnTouchListener(new View.OnTouchListener() {
+		/*decline.setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View view, MotionEvent motionEvent) {
 				float curX;
@@ -161,16 +170,7 @@ public class CallIncomingActivity extends LinphoneGenericActivity implements Lin
 				}
 				return true;
 			}
-		});
-
-
-		decline.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				accept.setVisibility(View.GONE);
-				acceptUnlock.setVisibility(View.VISIBLE);
-			}
-		});
+		});*/
 
 		mListener = new LinphoneCoreListenerBase(){
 			@Override
