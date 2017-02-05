@@ -14,7 +14,7 @@ sip_tls_port=-1
 [video]
 size=qvga
 device=Android1
-automatically_initiate=0
+automatically_initiate=1
 automatically_accept=1
 
 [app]
