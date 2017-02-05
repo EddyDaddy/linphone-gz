@@ -1493,7 +1493,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 		sideMenu = (DrawerLayout) findViewById(R.id.side_menu);
 		sideMenuItems = new ArrayList<String>();
 		sideMenuItems.add(getResources().getString(R.string.menu_assistant));
-		sideMenuItems.add(getResources().getString(R.string.menu_settings));
+		//sideMenuItems.add(getResources().getString(R.string.menu_settings));
 		if(getResources().getBoolean(R.bool.enable_in_app_purchase)){
 			sideMenuItems.add(getResources().getString(R.string.inapp));
 		}
