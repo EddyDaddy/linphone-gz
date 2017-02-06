@@ -411,14 +411,21 @@ private static AssistantActivity instance;
 	}
 
 	public void displayCreateAccount() {
-		fragment = new CreateAccountFragment();
-		Bundle extra = new Bundle();
-		extra.putBoolean("LinkPhoneNumber", isLink);
-		extra.putBoolean("LinkFromPref", fromPref);
-		fragment.setArguments(extra);
-		changeFragment(fragment);
-		currentFragment = AssistantFragmentsEnum.CREATE_ACCOUNT;
-		back.setVisibility(View.VISIBLE);
+//		fragment = new CreateAccountFragment();
+//		Bundle extra = new Bundle();
+//		extra.putBoolean("LinkPhoneNumber", isLink);
+//		extra.putBoolean("LinkFromPref", fromPref);
+//		fragment.setArguments(extra);
+//		changeFragment(fragment);
+//		currentFragment = AssistantFragmentsEnum.CREATE_ACCOUNT;
+//		back.setVisibility(View.VISIBLE);
+//		
+//		if (getArguments().getBoolean("LinkFromPref")) {
+//			startActivity(new Intent().setClass(AssistantActivity.instance(), LinphoneActivity.class));
+//			AssistantActivity.instance().finish();
+//		} else {
+			AssistantActivity.instance().success();
+//		}
 	}
 
 	public void displayRemoteProvisioning() {
