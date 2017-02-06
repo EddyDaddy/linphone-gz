@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
+	<string name="no_account">请配置帐号</string>
     <!--Custom-->
     <string name="app_name">贵州广电可视</string>
     <string name="service_name">Linphone 服务</string>
