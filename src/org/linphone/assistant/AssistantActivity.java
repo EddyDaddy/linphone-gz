@@ -240,7 +240,7 @@ private static AssistantActivity instance;
 	public void onClick(View v) {
 		int id = v.getId();
 
-		if (id == R.id.assistant_cancel) {
+		if (id == R.id.assistant_cancel || id == R.id.back) {
 			hideKeyboard();
 			LinphonePreferences.instance().firstLaunchSuccessful();
 			if (getResources().getBoolean(R.bool.assistant_cancel_move_to_back)) {
@@ -253,6 +253,7 @@ private static AssistantActivity instance;
 		} else if (id == R.id.back) {
 			hideKeyboard();
 			onBackPressed();
+			finish();
 		}
 	}
 
@@ -388,6 +389,7 @@ private static AssistantActivity instance;
 		country = null;
 		currentFragment = AssistantFragmentsEnum.WELCOME;
 		back.setVisibility(View.INVISIBLE);
+		displayLoginGeneric();
 	}
 
 	public void displayLoginGeneric() {
