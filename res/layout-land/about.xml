@@ -99,7 +99,8 @@
                 style="@style/font12"
                 android:layout_gravity="left"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -122,11 +123,12 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/about_text"
-            android:text="@string/about_text"
+            android:text="贵州广电"
             style="@style/font23"
             android:layout_gravity="center"
             android:gravity="center"
