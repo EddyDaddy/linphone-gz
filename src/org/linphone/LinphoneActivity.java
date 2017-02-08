@@ -166,7 +166,8 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 			finish();
 			return;
 		} else if (savedInstanceState == null && (useFirstLoginActivity && LinphonePreferences.instance().isFirstLaunch())) {
-			LinphonePreferences.instance().setIceEnabled(true);
+			LinphonePreferences.instance().setIceEnabled(true);//---lile
+			LinphonePreferences.instance().setDebugEnabled(true);//---lile
 			if (LinphonePreferences.instance().getAccountCount() > 0) {
 				LinphonePreferences.instance().firstLaunchSuccessful();
 			} else {
@@ -1492,7 +1493,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 		sideMenu = (DrawerLayout) findViewById(R.id.side_menu);
 		sideMenuItems = new ArrayList<String>();
 		sideMenuItems.add(getResources().getString(R.string.menu_assistant));
-		//sideMenuItems.add(getResources().getString(R.string.menu_settings));
+//		sideMenuItems.add(getResources().getString(R.string.menu_settings));
 		if(getResources().getBoolean(R.bool.enable_in_app_purchase)){
 			sideMenuItems.add(getResources().getString(R.string.inapp));
 		}

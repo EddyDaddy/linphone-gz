@@ -21,6 +21,7 @@ automatically_accept=1
 tunnel=disabled
 push_notification=1
 auto_start=1
+debug=1
 
 [tunnel]
 host=
