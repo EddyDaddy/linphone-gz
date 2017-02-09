@@ -168,7 +168,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 		} else if (savedInstanceState == null && (useFirstLoginActivity && LinphonePreferences.instance().isFirstLaunch())) {
 			LinphonePreferences.instance().setIceEnabled(true);//---lile
 			LinphonePreferences.instance().setDebugEnabled(true);//---lile
-			LinphonePreferences.instance().setVideoPreset("720p");//---lile
+			LinphonePreferences.instance().setPreferredVideoSize("720p");//---lile
 			if (LinphonePreferences.instance().getAccountCount() > 0) {
 				LinphonePreferences.instance().firstLaunchSuccessful();
 			} else {
