@@ -492,7 +492,7 @@ public class AccountPreferencesFragment extends PreferencesListFragment implemen
 	        public boolean onPreferenceClick(Preference preference) {
 	        	mPrefs.deleteAccount(n);
 				LinphoneActivity.instance().refreshAccounts();
-	        	LinphoneActivity.instance().displaySettings();
+	        	LinphoneActivity.instance().displayAssistant();
 	        	return true;
 	        }
         });
