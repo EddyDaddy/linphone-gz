@@ -1,6 +1,6 @@
 [net]
-download_bw=1152
-upload_bw=1152
+download_bw=660
+upload_bw=660
 
 [sip]
 contact="Linphone Android" <sip:linphone.android@unknown-host>
@@ -12,7 +12,7 @@ sip_tcp_port=-1
 sip_tls_port=-1
 
 [video]
-size=720p
+size=vga
 device=Android1
 automatically_initiate=1
 automatically_accept=1
