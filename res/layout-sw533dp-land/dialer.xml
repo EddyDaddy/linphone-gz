@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="@color/colorD"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/dialer_bg" >
 
 	<ImageView
 		android:src="@drawable/dialer_background"
@@ -75,7 +75,8 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
-				android:adjustViewBounds="true">
+				android:adjustViewBounds="true"
+				android:visibility="gone">
 
 				<ImageView
 					android:id="@+id/add_contact"
