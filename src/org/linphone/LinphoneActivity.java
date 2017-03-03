@@ -132,6 +132,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 	private DrawerLayout sideMenu;
 	private RelativeLayout sideMenuContent, quitLayout, defaultAccount;
 	private ListView accountsList, sideMenuItemList;
+	private ArrayAdapter sideMenuAdapter;
 	private ImageView menu;
 	private boolean fetchedContactsOnce = false;
 	private boolean doNotGoToCallActivity = false;
@@ -168,7 +169,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 		} else if (savedInstanceState == null && (useFirstLoginActivity && LinphonePreferences.instance().isFirstLaunch())) {
 			LinphonePreferences.instance().setIceEnabled(true);//---lile
 			LinphonePreferences.instance().setDebugEnabled(true);//---lile
-			LinphonePreferences.instance().setPreferredVideoSize("720p");//---lile
+			LinphonePreferences.instance().setPreferredVideoSize("vga");//---lile
 			if (LinphonePreferences.instance().getAccountCount() > 0) {
 				LinphonePreferences.instance().firstLaunchSuccessful();
 			} else {
@@ -1499,11 +1500,12 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 			sideMenuItems.add(getResources().getString(R.string.inapp));
 		}
 		sideMenuItems.add(getResources().getString(R.string.menu_about));
+		sideMenuItems.add(getResources().getString(R.string.pref_echo_cancellation)+":"+(LinphonePreferences.instance().isEchoCancellationEnabled() ? "ON":"OFF"));
 		sideMenuContent = (RelativeLayout) findViewById(R.id.side_menu_content);
 		sideMenuItemList = (ListView)findViewById(R.id.item_list);
 		menu = (ImageView) findViewById(R.id.side_menu_button);
-
-		sideMenuItemList.setAdapter(new ArrayAdapter<String>(this, R.layout.side_menu_item_cell, sideMenuItems));
+		sideMenuAdapter = new ArrayAdapter<String>(this, R.layout.side_menu_item_cell, sideMenuItems);
+		sideMenuItemList.setAdapter(sideMenuAdapter);
 		sideMenuItemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -1515,6 +1517,12 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 				}
 				if (sideMenuItemList.getAdapter().getItem(i).toString().equals(getString(R.string.menu_assistant))) {
 					LinphoneActivity.instance().displayAssistant();
+				}
+				if (sideMenuItemList.getAdapter().getItem(i).toString().startsWith(getString(R.string.pref_echo_cancellation))) {
+					LinphonePreferences.instance().setEchoCancellation(!LinphonePreferences.instance().isEchoCancellationEnabled());
+					System.out.println(getResources().getString(R.string.pref_echo_cancellation) +":"+(LinphonePreferences.instance().isEchoCancellationEnabled() ? "ON":"OFF"));
+					sideMenuItems.set(i, getResources().getString(R.string.pref_echo_cancellation) +":"+(LinphonePreferences.instance().isEchoCancellationEnabled() ? "ON":"OFF"));
+					sideMenuAdapter.notifyDataSetChanged();
 				}
 				if(getResources().getBoolean(R.bool.enable_in_app_purchase)){
 					if (sideMenuItemList.getAdapter().getItem(i).toString().equals(getString(R.string.inapp))) {
