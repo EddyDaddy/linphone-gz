@@ -18,12 +18,15 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 package org.linphone.ui;
 
+import android.R;
 import android.content.Context;
+import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.View.OnLongClickListener;
 import android.widget.ImageView;
 
@@ -74,5 +77,8 @@ public class EraseButton extends ImageView implements AddressAware, OnClickListe
 	public void afterTextChanged(Editable s) {
 		setEnabled(s.length() > 0);
 	}
+
+	
+	
 
 }

@@ -27,6 +27,8 @@ import org.linphone.core.LinphoneCoreException;
 import org.linphone.core.LinphoneProxyConfig;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -85,9 +87,16 @@ public class CallButton extends ImageView implements OnClickListener, AddressAwa
 		}
 	}
 	
+	
+	
+	
+
 	protected void onWrongDestinationAddress() {
 		Toast.makeText(getContext()
 				,String.format(getResources().getString(R.string.warning_wrong_destination_address),mAddress.getText().toString())
 				,Toast.LENGTH_LONG).show();
 	}
+	
+	
+	
 }

@@ -45,8 +45,25 @@ public class Numpad extends LinearLayout implements AddressAware {
 	public Numpad(Context context, boolean playDtmf) {
 		super(context);
 		mPlayDtmf = playDtmf;
-		LayoutInflater.from(context).inflate(R.layout.numpad, this);
+		View view = LayoutInflater.from(context).inflate(R.layout.numpad, this);
+		Digit digit1 = (Digit)view.findViewById(R.id.Digit1);
+		digit1.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_1_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_one);
+				}
+			}
+		});
 		setLongClickable(true);
+		
 		onFinishInflate();
 	}
 
@@ -55,8 +72,200 @@ public class Numpad extends LinearLayout implements AddressAware {
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Numpad);
         mPlayDtmf = 1 == a.getInt(org.linphone.R.styleable.Numpad_play_dtmf, 1);
         a.recycle();
-		LayoutInflater.from(context).inflate(R.layout.numpad, this);
+        View view = LayoutInflater.from(context).inflate(R.layout.numpad, this);
 		setLongClickable(true);
+		Digit digit1 = (Digit)view.findViewById(R.id.Digit1);
+		digit1.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_1_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_one);
+				}
+			}
+		});
+		Digit digit2 = (Digit)view.findViewById(R.id.Digit2);
+		digit2.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_2_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_two);
+				}
+			}
+		});
+		Digit digit3 = (Digit)view.findViewById(R.id.Digit3);
+		digit3.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_3_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_three);
+				}
+			}
+		});
+		Digit digit4 = (Digit)view.findViewById(R.id.Digit4);
+		digit4.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_4_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_four);
+				}
+			}
+		});
+		Digit digit5 = (Digit)view.findViewById(R.id.Digit5);
+		digit5.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_5_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_five);
+				}
+			}
+		});
+		Digit digit6 = (Digit)view.findViewById(R.id.Digit6);
+		digit6.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_6_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_six);
+				}
+			}
+		});
+		Digit digit7 = (Digit)view.findViewById(R.id.Digit7);
+		digit7.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_7_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_seven);
+				}
+			}
+		});
+		Digit digit8 = (Digit)view.findViewById(R.id.Digit8);
+		digit8.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_8_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_eight);
+				}
+			}
+		});
+		Digit digit9 = (Digit)view.findViewById(R.id.Digit9);
+		digit9.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_9_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_nine);
+				}
+			}
+		});
+		Digit digit00 = (Digit)view.findViewById(R.id.Digit00);
+		digit00.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_0_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_zero);
+				}
+			}
+		});
+		Digit digitStar = (Digit)view.findViewById(R.id.DigitStar);
+		digitStar.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_star_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_star);
+				}
+			}
+		});
+		Digit digitHash = (Digit)view.findViewById(R.id.DigitHash);
+		digitHash.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.numpad_hash_over);
+				}
+				else
+				{
+					v.setBackgroundResource(R.drawable.numpad_hash);
+				}
+			}
+		});
 	}
 
 	@Override

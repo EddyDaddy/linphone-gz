@@ -13,6 +13,7 @@
 		android:layout_alignParentTop="true">
 
 		<org.linphone.ui.EraseButton
+		    android:focusable="true"
 			android:id="@+id/erase"
 			android:src="@drawable/backspace"
 			android:contentDescription="@string/content_description_backspace"
@@ -21,10 +22,12 @@
 			android:layout_alignParentRight="true"
 			android:layout_centerVertical="true"
 			android:layout_marginRight="10dp"
-			android:layout_marginLeft="10dp" />
+			android:layout_marginLeft="10dp"
+			android:nextFocusLeft="@+id/address" />
 
 		<org.linphone.ui.AddressText
 			android:id="@+id/address"
+			android:focusable="false"
 			android:background="@color/colorF"
 			android:textColorHint="@color/colorE"
 			style="@style/font5"
@@ -36,7 +39,8 @@
 			android:paddingLeft="20dp"
 			android:paddingRight="5dp"
 			android:layout_toLeftOf="@id/erase"
-			android:layout_centerVertical="true"/>
+			android:layout_centerVertical="true"
+			android:nextFocusRight="@+id/erase"/>
 
 	</RelativeLayout>
 
@@ -48,7 +52,9 @@
 		android:visibility="gone"
 		android:layout_above="@id/controls"
 		android:layout_below="@id/address_bar"
-		android:layout_centerInParent="true"/>
+		android:layout_centerInParent="true"
+		android:nextFocusUp="@+id/erase"
+		android:nextFocusDown="@+id/add_contact"/>
 
 	<ImageView
 		android:src="@drawable/dialer_background"
@@ -57,19 +63,21 @@
 		android:layout_height="wrap_content"/>
     
     <LinearLayout
+        android:focusable="false"
         android:id="@+id/controls"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="60dp">
 
 		<RelativeLayout
-			android:focusable="true"
+			android:focusable="false"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
 			android:adjustViewBounds="true">
 
 			<ImageView
+			    android:focusable="true"
 				android:id="@+id/add_contact"
 				android:src="@drawable/contact_add_button"
 				android:background="@drawable/toolbar_button"
@@ -77,11 +85,13 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:padding="15dp"
-				android:layout_alignParentBottom="true"/>
+				android:layout_alignParentBottom="true"
+				android:nextFocusRight="@+id/call"/>
 
 		</RelativeLayout>
 
         <org.linphone.ui.CallButton
+            android:focusable="true"
 			android:id="@+id/call"
 			android:src="@drawable/call_audio_start"
 			android:background="@drawable/call"

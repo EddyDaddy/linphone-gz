@@ -66,6 +66,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -81,9 +82,11 @@ import android.view.OrientationEventListener;
 import android.view.Surface;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
@@ -194,6 +197,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 		}
 
 		setContentView(R.layout.main);
+		
 		instance = this;
 		fragmentsHistory = new ArrayList<FragmentsAvailable>();
 		pendingFragmentTransaction = FragmentsAvailable.UNKNOW;
@@ -1545,6 +1549,20 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 				}
 			}
 		});
+		menu.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.shape_corner_menu);
+				}else
+				{
+					v.setBackgroundResource(Color.TRANSPARENT);
+				}
+			}
+		});
 
 		quitLayout = (RelativeLayout) findViewById(R.id.side_menu_quit);
 		quitLayout.setOnClickListener(new OnClickListener() {
@@ -1777,6 +1795,32 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 		}
 		return -1;
 	}
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		// TODO Auto-generated method stub
+		
+		switch (keyCode) {  
+	  
+	     case KeyEvent.KEYCODE_DPAD_DOWN:  
+	    	 Toast.makeText(LinphoneActivity.this, "焦点在:"+getCurrentFocus().getId(), Toast.LENGTH_SHORT);
+	     break;  
+	  
+	     case KeyEvent.KEYCODE_DPAD_LEFT:  
+	    	 Toast.makeText(LinphoneActivity.this, "焦点在:"+getCurrentFocus().getId(), Toast.LENGTH_SHORT);
+	         break;  
+	  
+	     case KeyEvent.KEYCODE_DPAD_RIGHT:  
+	    	 Toast.makeText(LinphoneActivity.this, "焦点在:"+getCurrentFocus().getId(), Toast.LENGTH_SHORT);
+	         break;  
+	  
+	     case KeyEvent.KEYCODE_DPAD_UP:  
+	    	 Toast.makeText(LinphoneActivity.this, "焦点在:"+getCurrentFocus().getId(), Toast.LENGTH_SHORT);
+	         break;  
+	 }  
+		return super.onKeyUp(keyCode, event);
+	}
+	
+	
 }
 
 interface ContactPicked {

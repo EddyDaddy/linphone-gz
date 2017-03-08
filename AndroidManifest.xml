@@ -11,9 +11,9 @@
 
     <!-- Permissions for Push Notification -->
     <permission
-        android:name="org.linphone.permission.C2D_MESSAGE"
+        android:name="org.linphone.permission.C1D_MESSAGE"
         android:protectionLevel="signature"/> <!-- Change package ! -->
-    <uses-permission android:name="org.linphone.permission.C2D_MESSAGE"/> <!-- Change package ! -->
+    <uses-permission android:name="org.linphone.permission.C1D_MESSAGE"/>  <!-- Change package ! -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
@@ -56,7 +56,14 @@
     <uses-permission android:name="com.android.vending.BILLING"/>
     <!-- Needed for overlay widget -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-
+    <!-- android tv needed -->
+    <uses-feature 
+        android:name="android.software.leanback" 
+        android:required="false"/>
+	<uses-feature 
+	    android:name="android.hardware.touchscreen" 
+	    android:required="false"/>
+	
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"

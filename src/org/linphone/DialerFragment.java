@@ -24,14 +24,16 @@ import org.linphone.ui.AddressText;
 import org.linphone.ui.CallButton;
 import org.linphone.ui.EraseButton;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -60,8 +62,35 @@ public class DialerFragment extends Fragment {
 
 		EraseButton erase = (EraseButton) view.findViewById(R.id.erase);
 		erase.setAddressWidget(mAddress);
-
+		erase.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.shape_corner);
+				}else
+				{
+					v.setBackgroundResource(Color.TRANSPARENT);
+				}
+			}
+		});
 		mCall = (CallButton) view.findViewById(R.id.call);
+		mCall.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.shape_corner_call);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.call);
+				}
+			}
+		});
 		mCall.setAddressWidget(mAddress);
 		if (LinphoneActivity.isInstanciated() && LinphoneManager.getLc().getCallsNb() > 0) {
 			if (isCallTransferOngoing) {
@@ -84,7 +113,20 @@ public class DialerFragment extends Fragment {
 
 		mAddContact = (ImageView) view.findViewById(R.id.add_contact);
 		mAddContact.setEnabled(!(LinphoneActivity.isInstanciated() && LinphoneManager.getLc().getCallsNb() > 0));
-
+		mAddContact.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.shape_corner);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.toolbar_button);
+				}
+			}
+		});
 		addContactListener = new OnClickListener() {
 			@Override
 			public void onClick(View v) {

@@ -12,6 +12,7 @@
 		android:layout_height="match_parent">
 
 		<ImageView
+		    android:focusable="true"
 			android:id="@+id/side_menu_button"
 			android:src="@drawable/menu_burger"
 			android:contentDescription="@string/content_description_menu"
@@ -22,6 +23,7 @@
 			android:layout_alignParentLeft="true"/>
 
 		<ImageView
+		    android:focusable="false"
 			android:id="@+id/call_quality"
 			android:src="@drawable/call_quality_indicator_0"
 			android:contentDescription="@string/content_description_call_quality"
@@ -33,6 +35,7 @@
 			android:visibility="invisible" />
 
 		<ImageView
+		    android:focusable="false"
 			android:id="@+id/status_led"
 			android:src="@drawable/led_disconnected"
 			android:paddingLeft="5dp"
@@ -43,6 +46,7 @@
 			android:layout_toRightOf="@id/side_menu_button"/>
 
 		<TextView
+		    android:focusable="false"
 			android:id="@+id/status_text"
 			android:text="@string/status_not_connected"
 			style="@style/font16"
@@ -54,6 +58,7 @@
 			android:layout_toRightOf="@id/status_led" />
 
 		<ImageView
+		    android:focusable="false"
 			android:id="@+id/voicemail"
 			android:src="@drawable/voicemail"
 			android:layout_centerVertical="true"
@@ -63,6 +68,7 @@
 			android:visibility="gone" />
 
 		<TextView
+		    android:focusable="false"
 			android:id="@+id/voicemail_count"
 			style="@style/font16"
 			android:layout_alignParentRight="true"
@@ -74,6 +80,7 @@
 			android:visibility="gone" />
 
 		<ImageView
+		    android:focusable="false"
 			android:id="@+id/encryption"
 			android:src="@drawable/security_ko"
 			android:contentDescription="@string/content_description_encryption"
