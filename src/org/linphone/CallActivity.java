@@ -364,6 +364,20 @@ public class CallActivity extends LinphoneGenericActivity
 		// TopBar
 		video = (ImageView) findViewById(R.id.video);
 		video.setOnClickListener(this);
+		video.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.button_background);
+				}
+			}
+		});
 		enabledVideoButton(false);
 
 		videoProgress = (ProgressBar) findViewById(R.id.video_in_progress);
@@ -371,9 +385,37 @@ public class CallActivity extends LinphoneGenericActivity
 
 		micro = (ImageView) findViewById(R.id.micro);
 		micro.setOnClickListener(this);
+		micro.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.button_background);
+				}
+			}
+		});
 
 		speaker = (ImageView) findViewById(R.id.speaker);
 		speaker.setOnClickListener(this);
+		speaker.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.button_background);
+				}
+			}
+		});
 
 		options = (ImageView) findViewById(R.id.options);
 		options.setOnClickListener(this);
@@ -382,7 +424,20 @@ public class CallActivity extends LinphoneGenericActivity
 		// BottonBar
 		hangUp = (ImageView) findViewById(R.id.hang_up);
 		hangUp.setOnClickListener(this);
-
+		hangUp.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.call_hangup);
+				}
+			}
+		});
 		dialer = (ImageView) findViewById(R.id.dialer);
 		dialer.setOnClickListener(this);
 

@@ -39,6 +39,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.View.OnFocusChangeListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -90,7 +91,35 @@ public class CallIncomingActivity extends LinphoneGenericActivity implements Lin
 		//declineUnlock = (LinearLayout) findViewById(R.id.declineUnlock);
 
 		accept = (ImageView) findViewById(R.id.accept);
+		accept.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.call);
+				}
+			}
+		});
 		decline = (ImageView) findViewById(R.id.decline);
+		decline.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.hangup);
+				}
+			}
+		});
 		accept.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

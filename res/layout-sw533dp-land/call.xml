@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-	<fragment
+	<!-- <fragment
 		android:id="@+id/status"
 		android:name="org.linphone.StatusFragment"
 		android:layout_width="match_parent"
 		android:layout_height="35dp"
-		tools:layout="@layout/status" />
+		tools:layout="@layout/status"
+	 />  -->
 
 
 	<android.support.v4.widget.DrawerLayout
@@ -229,6 +230,8 @@
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
 						android:padding="15dp"
+						android:visibility="gone"
+						android:focusable="false"
 						android:contentDescription="@string/content_description_numpad"/>
 
 					<ImageView
@@ -245,7 +248,9 @@
 						android:background="@drawable/footer_button"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:layout_weight="1">
+						android:layout_weight="1"
+						android:visibility="gone"
+						android:focusable="false">
 						
 						<ImageView
 							android:id="@+id/chat"
@@ -255,6 +260,8 @@
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:padding="15dp"
+							android:visibility="gone"
+							android:focusable="false"
 							android:layout_centerInParent="true"/>
 	
 						<TextView
@@ -265,7 +272,8 @@
 							android:layout_height="20dp"
 							android:layout_margin="15dp"
 							android:gravity="center"
-							android:visibility="gone"/>
+							android:visibility="gone"
+							android:focusable="false"/>
 					</RelativeLayout>
 				</LinearLayout>
 
@@ -297,6 +305,7 @@
 							android:layout_centerHorizontal="true"
 							android:layout_centerVertical="true"
 							android:visibility="gone"
+							android:focusable="false"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"/>
 
@@ -341,6 +350,8 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
+						android:focusable="false"
+						android:visibility="gone"
 						android:contentDescription="@string/content_description_call_options"/>
 
 				</LinearLayout>

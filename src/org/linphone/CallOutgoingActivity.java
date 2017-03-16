@@ -39,13 +39,14 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CallOutgoingActivity extends LinphoneGenericActivity implements OnClickListener{
+public class CallOutgoingActivity extends LinphoneGenericActivity implements OnClickListener {
 	private static CallOutgoingActivity instance;
 
 	private TextView name, number;
@@ -82,17 +83,58 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 
 		micro = (ImageView) findViewById(R.id.micro);
 		micro.setOnClickListener(this);
+		micro.setOnFocusChangeListener(new OnFocusChangeListener() {
+
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if (hasFocus) {
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				} else {
+					v.setBackgroundResource(R.drawable.button_background);
+				}
+			}
+		});
 		speaker = (ImageView) findViewById(R.id.speaker);
 		speaker.setOnClickListener(this);
+		speaker.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.button_background);
+				}
+			}
+		});
 
 		// set this flag so this activity will stay in front of the keyguard
-		int flags = WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON;
+		int flags = WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+				| WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON;
 		getWindow().addFlags(flags);
 
 		hangUp = (ImageView) findViewById(R.id.outgoing_hang_up);
 		hangUp.setOnClickListener(this);
+		hangUp.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				if(hasFocus)
+				{
+					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
+				}else
+				{
+					v.setBackgroundResource(R.drawable.hangup);
+				}
+			}
+		});
 
-		mListener = new LinphoneCoreListenerBase(){
+		mListener = new LinphoneCoreListenerBase() {
 			@Override
 			public void callState(LinphoneCore lc, LinphoneCall call, LinphoneCall.State state, String message) {
 				if (call == mCall && State.Connected == state) {
@@ -140,8 +182,8 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 			List<LinphoneCall> calls = LinphoneUtils.getLinphoneCalls(LinphoneManager.getLc());
 			for (LinphoneCall call : calls) {
 				State cstate = call.getState();
-				if (State.OutgoingInit == cstate || State.OutgoingProgress == cstate
-						|| State.OutgoingRinging == cstate || State.OutgoingEarlyMedia == cstate) {
+				if (State.OutgoingInit == cstate || State.OutgoingProgress == cstate || State.OutgoingRinging == cstate
+						|| State.OutgoingEarlyMedia == cstate) {
 					mCall = call;
 					break;
 				}
@@ -164,7 +206,8 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 		LinphoneAddress address = mCall.getRemoteAddress();
 		LinphoneContact contact = ContactsManager.getInstance().findContactFromAddress(address);
 		if (contact != null) {
-			LinphoneUtils.setImagePictureFromUri(this, contactPicture, contact.getPhotoUri(), contact.getThumbnailUri());
+			LinphoneUtils.setImagePictureFromUri(this, contactPicture, contact.getPhotoUri(),
+					contact.getThumbnailUri());
 			name.setText(contact.getFullName());
 		} else {
 			name.setText(LinphoneUtils.getAddressDisplayName(address));
@@ -199,7 +242,7 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 
 		if (id == R.id.micro) {
 			isMicMuted = !isMicMuted;
-			if(isMicMuted) {
+			if (isMicMuted) {
 				micro.setImageResource(R.drawable.micro_selected);
 			} else {
 				micro.setImageResource(R.drawable.micro_default);
@@ -208,7 +251,7 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 		}
 		if (id == R.id.speaker) {
 			isSpeakerEnabled = !isSpeakerEnabled;
-			if(isSpeakerEnabled) {
+			if (isSpeakerEnabled) {
 				speaker.setImageResource(R.drawable.speaker_selected);
 			} else {
 				speaker.setImageResource(R.drawable.speaker_default);
@@ -222,7 +265,8 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (LinphoneManager.isInstanciated() && (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME)) {
+		if (LinphoneManager.isInstanciated()
+				&& (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME)) {
 			LinphoneManager.getLc().terminateCall(mCall);
 			finish();
 		}
@@ -248,25 +292,28 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 		finish();
 	}
 
-
-
 	private void checkAndRequestCallPermissions() {
 		ArrayList<String> permissionsList = new ArrayList<String>();
 
 		int recordAudio = getPackageManager().checkPermission(Manifest.permission.RECORD_AUDIO, getPackageName());
-		Log.i("[Permission] Record audio permission is " + (recordAudio == PackageManager.PERMISSION_GRANTED ? "granted" : "denied"));
+		Log.i("[Permission] Record audio permission is "
+				+ (recordAudio == PackageManager.PERMISSION_GRANTED ? "granted" : "denied"));
 		int camera = getPackageManager().checkPermission(Manifest.permission.CAMERA, getPackageName());
-		Log.i("[Permission] Camera permission is " + (camera == PackageManager.PERMISSION_GRANTED ? "granted" : "denied"));
+		Log.i("[Permission] Camera permission is "
+				+ (camera == PackageManager.PERMISSION_GRANTED ? "granted" : "denied"));
 
 		if (recordAudio != PackageManager.PERMISSION_GRANTED) {
-			if (LinphonePreferences.instance().firstTimeAskingForPermission(Manifest.permission.RECORD_AUDIO) || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)) {
+			if (LinphonePreferences.instance().firstTimeAskingForPermission(Manifest.permission.RECORD_AUDIO)
+					|| ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)) {
 				Log.i("[Permission] Asking for record audio");
 				permissionsList.add(Manifest.permission.RECORD_AUDIO);
 			}
 		}
-		if (LinphonePreferences.instance().shouldInitiateVideoCall() || LinphonePreferences.instance().shouldAutomaticallyAcceptVideoRequests()) {
+		if (LinphonePreferences.instance().shouldInitiateVideoCall()
+				|| LinphonePreferences.instance().shouldAutomaticallyAcceptVideoRequests()) {
 			if (camera != PackageManager.PERMISSION_GRANTED) {
-				if (LinphonePreferences.instance().firstTimeAskingForPermission(Manifest.permission.CAMERA) || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+				if (LinphonePreferences.instance().firstTimeAskingForPermission(Manifest.permission.CAMERA)
+						|| ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
 					Log.i("[Permission] Asking for camera");
 					permissionsList.add(Manifest.permission.CAMERA);
 				}
@@ -283,7 +330,8 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 	@Override
 	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 		for (int i = 0; i < permissions.length; i++) {
-			Log.i("[Permission] " + permissions[i] + " is " + (grantResults[i] == PackageManager.PERMISSION_GRANTED ? "granted" : "denied"));
+			Log.i("[Permission] " + permissions[i] + " is "
+					+ (grantResults[i] == PackageManager.PERMISSION_GRANTED ? "granted" : "denied"));
 		}
 	}
 }
