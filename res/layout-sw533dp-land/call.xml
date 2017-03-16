@@ -243,6 +243,7 @@
 						android:layout_weight="0.5"
 						android:padding="12dp"
 						android:focusable="true"
+						android:tint="@color/colorB"
 						android:contentDescription="@string/content_description_hang_up"/>
 
 					<RelativeLayout

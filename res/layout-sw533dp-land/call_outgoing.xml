@@ -150,6 +150,7 @@
 			android:contentDescription="@string/content_description_hang_up"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:tint="@color/colorB"
 			android:focusable="true"
 			android:layout_weight="0.7"
 			android:padding="15dp"/>

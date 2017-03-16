@@ -132,7 +132,7 @@ public class CallActivity extends LinphoneGenericActivity
 	private ViewGroup container;
 	private boolean isConferenceRunning = false;
 	private LinphoneCoreListenerBase mListener;
-	private DrawerLayout sideMenu;
+//	private DrawerLayout sideMenu;
 	private boolean mProximitySensingEnabled;
 
 	private Button settingBtn, callRecordBtn;
@@ -577,23 +577,23 @@ public class CallActivity extends LinphoneGenericActivity
 	}
 
 	public void createInCallStats() {
-		sideMenu = (DrawerLayout) findViewById(R.id.side_menu);
-		menu = (ImageView) findViewById(R.id.call_quality);
-
-		sideMenuContent = (RelativeLayout) findViewById(R.id.side_menu_content);
-
-		menu.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				if (sideMenu.isDrawerVisible(Gravity.LEFT)) {
-					sideMenu.closeDrawer(sideMenuContent);
-				} else {
-					sideMenu.openDrawer(sideMenuContent);
-				}
-			}
-		});
-
-		initCallStatsRefresher(LinphoneManager.getLc().getCurrentCall(), findViewById(R.id.incall_stats));
+//		sideMenu = (DrawerLayout) findViewById(R.id.side_menu);
+//		menu = (ImageView) findViewById(R.id.call_quality);
+//
+//		sideMenuContent = (RelativeLayout) findViewById(R.id.side_menu_content);
+//
+//		menu.setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View view) {
+//				if (sideMenu.isDrawerVisible(Gravity.LEFT)) {
+//					sideMenu.closeDrawer(sideMenuContent);
+//				} else {
+//					sideMenu.openDrawer(sideMenuContent);
+//				}
+//			}
+//		});
+//
+//		initCallStatsRefresher(LinphoneManager.getLc().getCurrentCall(), findViewById(R.id.incall_stats));
 	}
 
 	private void refreshIncallUi() {
