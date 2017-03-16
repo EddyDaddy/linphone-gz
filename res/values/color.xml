@@ -15,4 +15,10 @@
     <color name="colorM">#102b6a</color>
 
     <color name="transparent">#00000000</color>
+    <color name="setting_btn_stroke">#009999</color>
+    <color name="dialer_call_btn">#009900</color>
+    <color name="black_btn_bg">#666666</color>
+    <color name="focus_view_color">#FFFF99</color>
+    <color name="login_btn_bg_nomal">#ff6600</color>
+    <color name="logout_btn_bg_normal">#999999</color>
 </resources>

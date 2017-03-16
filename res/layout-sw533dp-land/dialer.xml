@@ -1,51 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dialer_bg" >
+    android:background="@drawable/launcher_backgroud"
+    android:orientation="horizontal" >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:layout_centerVertical="true"
-        android:src="@drawable/dialer_background" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="vertical" >
 
-    <RelativeLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:focusable="false"
+            android:visibility="invisible" >
+
+            <ImageView
+                android:id="@+id/person_ico_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:focusable="false"
+                android:src="@drawable/person_icon" />
+
+            <TextView
+                android:id="@+id/show_status_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="bottom"
+                android:paddingLeft="10dp"
+                android:text="未注册"
+                android:focusable="false"
+                android:textColor="@color/colorH"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/add_iv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:focusable="false"
+            android:background="@drawable/ad_image" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/setting_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:background="@drawable/dialer_setting_btn"
+                android:nextFocusDown="@id/setting_btn"
+                android:nextFocusLeft="@id/setting_btn"
+                android:nextFocusRight="@+id/call_record_btn"
+                android:nextFocusUp="@id/setting_btn"
+                android:text="设   置"
+                android:textColor="@color/black_btn_bg"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/call_record_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:background="@drawable/dialer_setting_btn"
+                android:nextFocusDown="@id/call_record_btn"
+                android:nextFocusLeft="@id/setting_btn"
+                android:nextFocusRight="@+id/numpad"
+                android:nextFocusUp="@id/call_record_btn"
+                android:text="呼叫记录"
+                android:textColor="@color/black_btn_bg"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/dialer"
-        android:layout_width="300dp"
-        android:layout_height="460dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="50dp"
-        android:background="@color/colorH" >
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="visible" >
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/address_bar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="0dp"
             android:layout_alignParentTop="true"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorF" >
-
-            <org.linphone.ui.EraseButton
-                android:id="@+id/erase"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:contentDescription="@string/content_description_backspace"
-                android:src="@drawable/backspace" />
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1" >
 
             <org.linphone.ui.AddressText
                 android:id="@+id/address"
                 style="@style/font5"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@id/erase"
-                android:background="@color/colorF"
+                android:layout_weight="4"
+                android:background="@drawable/round_corner_5"
                 android:ellipsize="start"
                 android:focusable="false"
                 android:hint="@string/address_bar_hint"
@@ -53,32 +126,49 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="5dp"
                 android:textColorHint="@color/colorE" />
-        </RelativeLayout>
+
+            <org.linphone.ui.EraseButton
+                android:id="@+id/erase"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_corner_5"
+                android:contentDescription="@string/content_description_backspace"
+                android:focusable="true"
+                android:nextFocusDown="@+id/numpad"
+                android:nextFocusLeft="@+id/erase"
+                android:nextFocusRight="@+id/erase"
+                android:nextFocusUp="@+id/erase"
+                android:src="@drawable/backspace" />
+        </LinearLayout>
 
         <org.linphone.ui.Numpad
             android:id="@+id/numpad"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/controls"
-            android:layout_below="@id/address_bar"
-            android:layout_centerInParent="true"
-            android:nextFocusDown="@+id/add_contact"
-            android:nextFocusUp="@+id/erase"
-            android:padding="10dp" />
+            android:layout_height="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="4"
+            android:nextFocusDown="@+id/call"
+            android:nextFocusUp="@+id/erase" />
 
         <LinearLayout
             android:id="@+id/controls"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:focusable="false" >
+            android:layout_height="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
                 android:focusable="false"
+                android:adjustViewBounds="true"
                 android:visibility="gone" >
 
                 <ImageView
@@ -88,8 +178,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/toolbar_button"
                     android:contentDescription="@string/content_description_add_contact"
-                    android:focusable="true"
-                    android:nextFocusRight="@+id/call"
+                    android:focusable="false"
                     android:padding="15dp"
                     android:src="@drawable/contact_add_button" />
             </RelativeLayout>
@@ -97,14 +186,20 @@
             <org.linphone.ui.CallButton
                 android:id="@+id/call"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:background="@drawable/call"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/round_corner_5"
                 android:contentDescription="@string/content_description_call"
                 android:focusable="true"
-                android:padding="12dp"
-                android:src="@drawable/call_audio_start" />
+                android:nextFocusDown="@+id/call"
+                android:nextFocusLeft="@+id/call_record_btn"
+                android:nextFocusRight="@+id/call"
+                android:nextFocusUp="@+id/numpad"
+                android:text="拨  号"
+                android:textColor="@color/black_btn_bg"
+                android:textSize="30sp"
+                />
         </LinearLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

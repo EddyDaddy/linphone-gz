@@ -32,13 +32,14 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 /**
  * @author Guillaume Beraudo
  */
-public class CallButton extends ImageView implements OnClickListener, AddressAware {
+public class CallButton extends Button implements OnClickListener, AddressAware {
 
 	private AddressText mAddress;
 	public void setAddressWidget(AddressText a) { mAddress = a; }

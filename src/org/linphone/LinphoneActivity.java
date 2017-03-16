@@ -162,14 +162,14 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
         }
 
 		boolean useFirstLoginActivity = getResources().getBoolean(R.bool.display_account_assistant_at_first_start);
-		if (LinphonePreferences.instance().isProvisioningLoginViewEnabled()) {
-			Intent wizard = new Intent();
-			wizard.setClass(this, RemoteProvisioningLoginActivity.class);
-			wizard.putExtra("Domain", LinphoneManager.getInstance().wizardLoginViewDomain);
-			startActivity(wizard);
-			finish();
-			return;
-		} else if (savedInstanceState == null && (useFirstLoginActivity && LinphonePreferences.instance().isFirstLaunch())) {
+//		if (LinphonePreferences.instance().isProvisioningLoginViewEnabled()) {
+//			Intent wizard = new Intent();
+//			wizard.setClass(this, RemoteProvisioningLoginActivity.class);
+//			wizard.putExtra("Domain", LinphoneManager.getInstance().wizardLoginViewDomain);
+//			startActivity(wizard);
+//			finish();
+//			return;
+//		} else if (savedInstanceState == null && (useFirstLoginActivity && LinphonePreferences.instance().isFirstLaunch())) {
 			LinphonePreferences.instance().setIceEnabled(true);//---lile
 			LinphonePreferences.instance().setDebugEnabled(true);//---lile
 			LinphonePreferences.instance().setPreferredVideoSize("720p");//---lile
@@ -181,7 +181,7 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 				finish();
 				return;
 			}
-		}
+//		}
 
 		if (getIntent() != null && getIntent().getExtras() != null) {
 			newProxyConfig = getIntent().getExtras().getBoolean("isNewProxyConfig");

@@ -54,11 +54,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_1_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_one);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -82,11 +82,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_1_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_one);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -98,11 +98,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_2_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_two);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -114,11 +114,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_3_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_three);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -130,11 +130,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_4_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_four);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -146,11 +146,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_5_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_five);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -162,11 +162,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_6_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_six);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -178,11 +178,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_7_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_seven);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -194,11 +194,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_8_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_eight);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -210,11 +210,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_9_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_nine);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -226,11 +226,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_0_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_zero);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -242,11 +242,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_star_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_star);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});
@@ -258,11 +258,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 				// TODO Auto-generated method stub
 				if(hasFocus)
 				{
-					v.setBackgroundResource(R.drawable.numpad_hash_over);
+					v.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 				}
 				else
 				{
-					v.setBackgroundResource(R.drawable.numpad_hash);
+					v.setBackgroundResource(R.drawable.numpad_unfocus_bg);
 				}
 			}
 		});

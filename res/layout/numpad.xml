@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			 android:layout_width="match_parent" android:layout_height="match_parent" >
+			 android:layout_width="match_parent" android:layout_height="match_parent" android:stretchColumns="0,1,2">
 
 <TableRow android:layout_weight="1" android:gravity="center" android:focusable="false">
 	<org.linphone.ui.Digit android:id="@+id/Digit1"	android:text="1" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusRight="@+id/Digit2" android:nextFocusDown="@+id/Digit4"/>
-	<org.linphone.ui.Digit android:id="@+id/Digit2"	android:text="2" style="@style/DialerDigit" android:background="@drawable/numpad_two" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit2"	android:text="2" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusRight="@+id/Digit3" android:nextFocusDown="@+id/Digit5" android:nextFocusLeft="@+id/Digit1"/>
-	<org.linphone.ui.Digit android:id="@+id/Digit3"	android:text="3" style="@style/DialerDigit" android:background="@drawable/numpad_three" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit3"	android:text="3" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusDown="@+id/Digit6" android:nextFocusLeft="@+id/Digit2"/>
 </TableRow>
 
 <TableRow android:layout_weight="1" android:gravity="center" android:focusable="false">
-	<org.linphone.ui.Digit android:id="@+id/Digit4" android:text="4" style="@style/DialerDigit" android:background="@drawable/numpad_four" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit4" android:text="4" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusRight="@+id/Digit5" android:nextFocusDown="@+id/Digit7" android:nextFocusUp="@+id/Digit1"/>
-	<org.linphone.ui.Digit android:id="@+id/Digit5"	android:text="5" style="@style/DialerDigit" android:background="@drawable/numpad_five" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit5"	android:text="5" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusRight="@+id/Digit6" android:nextFocusDown="@+id/Digit8" android:nextFocusUp="@+id/Digit2" android:nextFocusLeft="@+id/Digit4"/>
-	<org.linphone.ui.Digit android:id="@+id/Digit6"	android:text="6" style="@style/DialerDigit" android:background="@drawable/numpad_six" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit6"	android:text="6" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusDown="@+id/Digit9" android:nextFocusUp="@+id/Digit3" android:nextFocusLeft="@+id/Digit5"/>
 </TableRow>
 
 <TableRow android:layout_weight="1" android:gravity="center" android:focusable="false">
-	<org.linphone.ui.Digit android:id="@+id/Digit7"	android:text="7" style="@style/DialerDigit" android:background="@drawable/numpad_seven" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit7"	android:text="7" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusRight="@+id/Digit8" android:nextFocusDown="@+id/DigitStar" android:nextFocusUp="@+id/Digit4" />
-	<org.linphone.ui.Digit android:id="@+id/Digit8"	android:text="8" style="@style/DialerDigit" android:background="@drawable/numpad_eight" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit8"	android:text="8" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusRight="@+id/Digit9" android:nextFocusDown="@+id/Digit00" android:nextFocusUp="@+id/Digit5" android:nextFocusLeft="@+id/Digit7"/>
-	<org.linphone.ui.Digit android:id="@+id/Digit9"	android:text="9" style="@style/DialerDigit" android:background="@drawable/numpad_nine" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit9"	android:text="9" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusDown="@+id/DigitHash" android:nextFocusUp="@+id/Digit6" android:nextFocusLeft="@+id/Digit8"/>
 </TableRow>
 
 <TableRow android:layout_weight="1" android:gravity="center" android:focusable="false">
-	<org.linphone.ui.Digit android:id="@+id/DigitStar" android:text="*"  style="@style/DialerDigit" android:background="@drawable/numpad_star_digit" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/DigitStar" android:text="*"  style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusRight="@+id/Digit00" android:nextFocusUp="@+id/Digit7"/>
-	<org.linphone.ui.Digit android:id="@+id/Digit00"   android:text="0+" style="@style/DialerDigit" android:background="@drawable/numpad_zero" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/Digit00"   android:text="0+" style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusRight="@+id/DigitHash" android:nextFocusUp="@+id/Digit8" android:nextFocusLeft="@+id/DigitStar"/>
-	<org.linphone.ui.Digit android:id="@+id/DigitHash" android:text="#"  style="@style/DialerDigit" android:background="@drawable/numpad_sharp" android:soundEffectsEnabled="true" 
+	<org.linphone.ui.Digit android:id="@+id/DigitHash" android:text="#"  style="@style/DialerDigit" android:background="@drawable/numpad_one" android:soundEffectsEnabled="true" 
 	    android:focusable="true" android:nextFocusUp="@+id/Digit9" android:nextFocusLeft="@+id/Digit00"/>
 </TableRow>
 

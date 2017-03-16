@@ -12,7 +12,7 @@
 		android:layout_height="match_parent">
 
 		<ImageView
-		    android:focusable="true"
+		    android:focusable="false"
 			android:id="@+id/side_menu_button"
 			android:src="@drawable/menu_burger"
 			android:contentDescription="@string/content_description_menu"

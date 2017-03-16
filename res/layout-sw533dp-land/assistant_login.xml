@@ -1,211 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/launcher_backgroud"
+    android:orientation="vertical" >
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:padding="30dp"
-		android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:orientation="vertical" >
 
-		<TextView
-			android:text="@string/assistant_generic_account"
-			style="@style/font6"
-			android:textAllCaps="true"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="70dp"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="horizontal" >
 
-		<TextView
-			android:text="@string/assistant_login_desc"
-			style="@style/font11"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:paddingTop="10dp"
-			android:layout_gravity="center"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
-		<TableLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="30dp"
-			android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:src="@drawable/new_friend" />
 
-			<TableRow
-				android:layout_weight="1"
-				android:gravity="center"
-				android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:text="亲朋好友"
+                    android:textSize="28sp" />
+            </LinearLayout>
 
-				<LinearLayout
-					android:orientation="vertical"
-					android:layout_width="0dp"
-					android:layout_weight="1"
-					android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
-					<TextView
-						android:text="@string/username"
-						style="@style/font13"
-						android:textAllCaps="true"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:src="@drawable/family_doctor" />
 
-					<EditText
-						android:id="@+id/assistant_username"
-						android:background="@drawable/resizable_textfield"
-						android:textColor="@color/colorB"
-						android:inputType="text|textNoSuggestions"
-						android:contentDescription="@string/content_description_username_field"
-						android:layout_width="match_parent"
-						android:layout_height="40dp"
-						android:singleLine="true"/>
-				</LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:text="家庭医生"
+                    android:textSize="28sp" />
+            </LinearLayout>
 
-				<LinearLayout
-					android:orientation="vertical"
-					android:paddingLeft="30dp"
-					android:layout_width="0dp"
-					android:layout_weight="1"
-					android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
-					<TextView
-						android:text="@string/password"
-						style="@style/font13"
-						android:textAllCaps="true"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:src="@drawable/remote_assistance" />
 
-					<EditText
-						android:id="@+id/assistant_password"
-						android:background="@drawable/resizable_textfield"
-						android:textColor="@color/colorB"
-						android:inputType="textPassword"
-						android:layout_width="match_parent"
-						android:layout_height="40dp"
-						android:singleLine="true"/>
-				</LinearLayout>
-			</TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:text="远程协助"
+                    android:textSize="28sp" />
+            </LinearLayout>
+        </LinearLayout>
 
-			<TableRow
-				android:layout_weight="1"
-				android:gravity="center"
-				android:layout_margin="10dp">
+        <RelativeLayout
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:focusable="true" >
 
-				<LinearLayout
-					android:orientation="vertical"
-					android:layout_width="0dp"
-					android:layout_weight="1"
-					android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/assistant_username"
+                style="@style/logined_et_style"
+                android:contentDescription="@string/content_description_username_field"
+                android:focusable="true"
+                android:hint="请输入用户名"
+                android:inputType="text|textNoSuggestions"
+                android:nextFocusDown="@id/assistant_password"
+                android:nextFocusLeft="@id/assistant_username"
+                android:nextFocusRight="@id/assistant_username"
+                android:nextFocusUp="@id/assistant_username"
+                android:textColor="@color/colorB" />
 
-					<TextView
-						android:text="@string/assistant_display_name_optional"
-						style="@style/font13"
-						android:textAllCaps="true"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="7dp"
+                android:focusable="false"
+                android:src="@drawable/person_icon" />
+        </RelativeLayout>
 
-					<EditText
-						android:id="@+id/assistant_display_name"
-						android:background="@drawable/resizable_textfield"
-						android:textColor="@color/colorB"
-						android:inputType="textPersonName"
-						android:contentDescription="@string/content_description_display_field"
-						android:layout_width="match_parent"
-						android:layout_height="40dp"
-						android:singleLine="true"/>
-				</LinearLayout>
+        <RelativeLayout
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:focusable="true" >
 
-				<LinearLayout
-					android:orientation="vertical"
-					android:layout_width="0dp"
-					android:layout_weight="1"
-					android:paddingLeft="30dp"
-					android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/assistant_password"
+                style="@style/logined_et_style"
+                android:background="@drawable/round_corner_5"
+                android:focusable="true"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:nextFocusDown="@id/assistant_domain"
+                android:nextFocusLeft="@id/assistant_password"
+                android:nextFocusRight="@id/assistant_password"
+                android:nextFocusUp="@id/assistant_username"
+                android:singleLine="true"
+                android:textColor="@color/colorB" />
 
-					<TextView
-						android:text="@string/domain"
-						style="@style/font13"
-						android:textAllCaps="true"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="7dp"
+                android:focusable="false"
+                android:src="@drawable/locked_icon" />
+        </RelativeLayout>
 
-					<EditText
-						android:id="@+id/assistant_domain"
-						android:background="@drawable/resizable_textfield"
-						android:textColor="@color/colorB"
-						android:inputType="textUri"
-						android:contentDescription="@string/content_description_domain_field"
-						android:layout_width="match_parent"
-						android:layout_height="40dp"
-						android:singleLine="true"/>
-				</LinearLayout>
+        <RelativeLayout
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:focusable="true" >
 
-			</TableRow>
+            <EditText
+                android:id="@+id/assistant_domain"
+                style="@style/logined_et_style"
+                android:background="@drawable/round_corner_5"
+                android:contentDescription="@string/content_description_domain_field"
+                android:focusable="true"
+                android:hint="请输入IP"
+                android:inputType="textUri"
+                android:nextFocusDown="@id/assistant_apply"
+                android:nextFocusLeft="@id/assistant_domain"
+                android:nextFocusRight="@id/assistant_domain"
+                android:nextFocusUp="@id/assistant_password"
+                android:singleLine="true"
+                android:textColor="@color/colorB" />
 
-			<TableRow
-				android:layout_weight="1"
-				android:gravity="center"
-				android:layout_margin="10dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="7dp"
+                android:focusable="false"
+                android:src="@drawable/locked_icon" />
+        </RelativeLayout>
 
-				<LinearLayout
-					android:orientation="vertical"
-					android:layout_width="0dp"
-					android:layout_weight="1"
-					android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/assistant_display_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/resizable_textfield"
+            android:contentDescription="@string/content_description_display_field"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:textColor="@color/colorB"
+            android:visibility="gone" />
 
-					<TextView
-						android:text="@string/transport"
-						style="@style/font13"
-						android:textAllCaps="true"
-						android:gravity="center"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/assistant_domain"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/resizable_textfield"
+            android:contentDescription="@string/content_description_domain_field"
+            android:inputType="textUri"
+            android:singleLine="true"
+            android:textColor="@color/colorB"
+            android:visibility="gone" />
 
-					<RadioGroup
-						android:id="@+id/assistant_transports"
-						android:orientation="horizontal"
-						android:gravity="center"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content">
+        <RadioGroup
+            android:id="@+id/assistant_transports"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone" >
 
-						<RadioButton
-							android:id="@+id/transport_udp"
-							android:text="@string/pref_transport_udp"
-							android:layout_margin="5dp"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"/>
+            <RadioButton
+                android:id="@+id/transport_udp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/pref_transport_udp" />
 
-						<RadioButton
-							android:id="@+id/transport_tcp"
-							android:text="@string/pref_transport_tcp"
-							android:layout_margin="5dp"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"/>
+            <RadioButton
+                android:id="@+id/transport_tcp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/pref_transport_tcp" />
 
-						<RadioButton
-							android:id="@+id/transport_tls"
-							android:text="@string/pref_transport_tls"
-							android:layout_margin="5dp"
-							android:checked="true"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"/>
-					</RadioGroup>
+            <RadioButton
+                android:id="@+id/transport_tls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:checked="true"
+                android:text="@string/pref_transport_tls" />
+        </RadioGroup>
 
-				</LinearLayout>
-			</TableRow>
-		</TableLayout>
+        <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:focusable="true"
+            android:orientation="horizontal" >
 
-		<Button
-			android:id="@+id/assistant_apply"
-			android:text="@string/assistant_login"
-			android:background="@drawable/assistant_button"
-			android:textColor="@drawable/assistant_button_text_color"
-			style="@style/font8"
-			android:layout_gravity="center"
-			android:layout_width="wrap_content"
-			android:layout_height="40dp"
-			android:paddingLeft="10dp"
-			android:paddingRight="10dp"
-			android:layout_marginTop="20dp"/>
+            <Button
+                android:id="@+id/assistant_apply"
+                style="@style/font8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/logout_btn_bg"
+                android:focusable="true"
+                android:nextFocusDown="@id/assistant_apply"
+                android:nextFocusLeft="@id/assistant_apply"
+                android:nextFocusUp="@id/assistant_domain"
+                android:text="登录"
+                android:textColor="@color/colorB" />
 
-	</LinearLayout>
+            <Button
+                android:id="@+id/assistant_out"
+                style="@style/font8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/login_btn_pressed_bg"
+                android:focusable="true"
+                android:nextFocusDown="@id/assistant_out"
+                android:nextFocusLeft="@id/assistant_apply"
+                android:nextFocusRight="@id/assistant_out"
+                android:nextFocusUp="@id/assistant_domain"
+                android:text="退出"
+                android:textColor="@color/colorB" />
+        </LinearLayout>
+    </LinearLayout>
+
 </ScrollView>

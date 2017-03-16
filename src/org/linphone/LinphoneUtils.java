@@ -57,9 +57,11 @@ import org.linphone.mediastream.video.capture.hwconf.Hacks;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -148,7 +150,28 @@ public final class LinphoneUtils {
 		if (!(keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0)) {
 			return false; // continue
 		}
-
+		if(keyCode==KeyEvent.KEYCODE_BACK){
+			AlertDialog.Builder builder = new Builder(activity);
+			builder.setMessage("确认注销当前账号吗？");
+			builder.setTitle("提示");
+			builder.setPositiveButton("确定", new DialogInterface.OnClickListener() { // 设置确定按钮
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					LinphonePreferences.instance().deleteAccount(LinphonePreferences.instance().getDefaultAccountIndex());
+					LinphoneActivity.instance().refreshAccounts();
+					LinphoneActivity.instance().displayAssistant();
+					dialog.dismiss(); // 关闭dialog
+				}
+			});
+			builder.setNegativeButton("取消", new DialogInterface.OnClickListener() { // 设置取消按钮
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+				}
+			});
+			builder.create().show();
+			return true;
+		}
 		activity.startActivity(new Intent()
 			.setAction(Intent.ACTION_MAIN)
 			.addCategory(Intent.CATEGORY_HOME));

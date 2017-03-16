@@ -10,10 +10,14 @@
 		android:id="@+id/status"
 		android:name="org.linphone.StatusFragment"
 		android:layout_width="match_parent"
-		android:layout_height="40dp"
-		tools:layout="@layout/status"/>
+		android:layout_height="1sp"
+		tools:layout="@layout/status"
+		android:visibility="gone"/>
 
-	<include layout="@layout/assistant_topbar" android:id="@+id/topbar" />
+	<include 
+	    layout="@layout/assistant_topbar" 
+	    android:id="@+id/topbar" 
+	    android:visibility="gone"/>
 
 	<LinearLayout
 		android:id="@+id/fragment_container"
