@@ -365,7 +365,6 @@ public class CallActivity extends LinphoneGenericActivity
 		video = (ImageView) findViewById(R.id.video);
 		video.setOnClickListener(this);
 		video.setOnFocusChangeListener(new OnFocusChangeListener() {
-			
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				// TODO Auto-generated method stub
@@ -1031,6 +1030,7 @@ public class CallActivity extends LinphoneGenericActivity
 	}
 
 	public void displayVideoCall(boolean display) {
+		display = true;
 		if (display) {
 			showStatusBar();
 			mControlsLayout.setVisibility(View.VISIBLE);
