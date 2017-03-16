@@ -43,13 +43,11 @@ import org.linphone.ui.Numpad;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.app.AlertDialog.Builder;
+import android.app.usage.UsageEvents.Event;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -67,7 +65,6 @@ import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.text.Html;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -75,6 +72,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
+import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
@@ -132,7 +130,7 @@ public class CallActivity extends LinphoneGenericActivity
 	private ViewGroup container;
 	private boolean isConferenceRunning = false;
 	private LinphoneCoreListenerBase mListener;
-//	private DrawerLayout sideMenu;
+	// private DrawerLayout sideMenu;
 	private boolean mProximitySensingEnabled;
 
 	private Button settingBtn, callRecordBtn;
@@ -332,7 +330,7 @@ public class CallActivity extends LinphoneGenericActivity
 			callFragment.setArguments(getIntent().getExtras());
 			getFragmentManager().beginTransaction().add(R.id.fragmentContainer, callFragment).commitAllowingStateLoss();
 		}
-		
+
 	}
 
 	private boolean isVideoEnabled(LinphoneCall call) {
@@ -364,15 +362,26 @@ public class CallActivity extends LinphoneGenericActivity
 		// TopBar
 		video = (ImageView) findViewById(R.id.video);
 		video.setOnClickListener(this);
+		video.setOnKeyListener(new OnKeyListener() {
+
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				// TODO Auto-generated method stub
+				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT && event.getAction() == KeyEvent.ACTION_DOWN) {
+					micro.requestFocus();
+				} else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT && event.getAction() == KeyEvent.ACTION_DOWN) {
+					hangUp.requestFocus();
+				}
+				return false;
+			}
+		});
 		video.setOnFocusChangeListener(new OnFocusChangeListener() {
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				// TODO Auto-generated method stub
-				if(hasFocus)
-				{
+				if (hasFocus) {
 					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
-				}else
-				{
+				} else {
 					v.setBackgroundResource(R.drawable.button_background);
 				}
 			}
@@ -384,16 +393,31 @@ public class CallActivity extends LinphoneGenericActivity
 
 		micro = (ImageView) findViewById(R.id.micro);
 		micro.setOnClickListener(this);
+		micro.setOnKeyListener(new OnKeyListener() {
+
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				// TODO Auto-generated method stub
+				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT && event.getAction() == KeyEvent.ACTION_DOWN) {
+					speaker.requestFocus();
+				} else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT && event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (video.isEnabled()) {
+						video.requestFocus();
+					} else {
+						hangUp.requestFocus();
+					}
+				}
+				return false;
+			}
+		});
 		micro.setOnFocusChangeListener(new OnFocusChangeListener() {
-			
+
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				// TODO Auto-generated method stub
-				if(hasFocus)
-				{
+				if (hasFocus) {
 					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
-				}else
-				{
+				} else {
 					v.setBackgroundResource(R.drawable.button_background);
 				}
 			}
@@ -401,16 +425,25 @@ public class CallActivity extends LinphoneGenericActivity
 
 		speaker = (ImageView) findViewById(R.id.speaker);
 		speaker.setOnClickListener(this);
+		speaker.setOnKeyListener(new OnKeyListener() {
+
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				// TODO Auto-generated method stub
+				if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT && event.getAction() == KeyEvent.ACTION_DOWN) {
+					micro.requestFocus();
+				}
+				return false;
+			}
+		});
 		speaker.setOnFocusChangeListener(new OnFocusChangeListener() {
-			
+
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				// TODO Auto-generated method stub
-				if(hasFocus)
-				{
+				if (hasFocus) {
 					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
-				}else
-				{
+				} else {
 					v.setBackgroundResource(R.drawable.button_background);
 				}
 			}
@@ -424,17 +457,31 @@ public class CallActivity extends LinphoneGenericActivity
 		hangUp = (ImageView) findViewById(R.id.hang_up);
 		hangUp.setOnClickListener(this);
 		hangUp.requestFocus();
+		hangUp.setOnKeyListener(new OnKeyListener() {
+
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				// TODO Auto-generated method stub
+				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT && event.getAction() == KeyEvent.ACTION_DOWN) {
+					if (!video.isEnabled()) {
+						micro.requestFocus();
+					} else {
+						video.requestFocus();
+					}
+
+				}
+				return false;
+			}
+		});
 		hangUp.setOnFocusChangeListener(new OnFocusChangeListener() {
-			
+
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				// TODO Auto-generated method stub
-				if(hasFocus)
-				{
+				if (hasFocus) {
 					v.setBackgroundResource(R.drawable.view_corner7_onfocus_bg);
-				}else
-				{
-					v.setBackgroundResource(R.drawable.call_hangup);
+				} else {
+					v.setBackgroundResource(R.drawable.hangup);
 				}
 			}
 		});
@@ -576,23 +623,25 @@ public class CallActivity extends LinphoneGenericActivity
 	}
 
 	public void createInCallStats() {
-//		sideMenu = (DrawerLayout) findViewById(R.id.side_menu);
-//		menu = (ImageView) findViewById(R.id.call_quality);
-//
-//		sideMenuContent = (RelativeLayout) findViewById(R.id.side_menu_content);
-//
-//		menu.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View view) {
-//				if (sideMenu.isDrawerVisible(Gravity.LEFT)) {
-//					sideMenu.closeDrawer(sideMenuContent);
-//				} else {
-//					sideMenu.openDrawer(sideMenuContent);
-//				}
-//			}
-//		});
-//
-//		initCallStatsRefresher(LinphoneManager.getLc().getCurrentCall(), findViewById(R.id.incall_stats));
+		// sideMenu = (DrawerLayout) findViewById(R.id.side_menu);
+		// menu = (ImageView) findViewById(R.id.call_quality);
+		//
+		// sideMenuContent = (RelativeLayout)
+		// findViewById(R.id.side_menu_content);
+		//
+		// menu.setOnClickListener(new OnClickListener() {
+		// @Override
+		// public void onClick(View view) {
+		// if (sideMenu.isDrawerVisible(Gravity.LEFT)) {
+		// sideMenu.closeDrawer(sideMenuContent);
+		// } else {
+		// sideMenu.openDrawer(sideMenuContent);
+		// }
+		// }
+		// });
+		//
+		// initCallStatsRefresher(LinphoneManager.getLc().getCurrentCall(),
+		// findViewById(R.id.incall_stats));
 	}
 
 	private void refreshIncallUi() {
@@ -1030,10 +1079,10 @@ public class CallActivity extends LinphoneGenericActivity
 	}
 
 	public void displayVideoCall(boolean display) {
-		display = true;
 		if (display) {
 			showStatusBar();
 			mControlsLayout.setVisibility(View.VISIBLE);
+			hangUp.requestFocus();
 			mActiveCallHeader.setVisibility(View.VISIBLE);
 			callInfo.setVisibility(View.VISIBLE);
 			avatar_layout.setVisibility(View.GONE);
@@ -1361,6 +1410,23 @@ public class CallActivity extends LinphoneGenericActivity
 		}
 	}
 
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_MENU)
+		{
+			if(!mControlsLayout.isShown())
+			{
+				displayVideoCall(true);
+			}
+			else
+			{
+				displayVideoCall(false);
+			}
+			return true;
+		}
+		return super.onKeyUp(keyCode, event);
+	}
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (LinphoneUtils.onKeyVolumeAdjust(keyCode))

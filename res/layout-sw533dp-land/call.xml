@@ -212,7 +212,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="60dp"
 				android:layout_alignParentBottom="true"
-				android:orientation="horizontal">
+				android:orientation="horizontal"
+				android:focusable="false">
 
 				<LinearLayout
 					android:id="@+id/main_bar"
@@ -220,7 +221,8 @@
 					android:layout_width="match_parent"
 					android:layout_height="60dp"
 					android:layout_weight="1"
-					android:orientation="horizontal">
+					android:orientation="horizontal"
+					android:focusable="false">
 
 					<ImageView
 						android:id="@+id/dialer"
@@ -284,13 +286,15 @@
 					android:layout_width="match_parent"
 					android:layout_height="60dp"
 					android:layout_weight="1"
-					android:orientation="horizontal">
+					android:orientation="horizontal"
+					android:focusable="false">
 
 					<RelativeLayout
 						android:background="@drawable/button_background"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
-						android:layout_weight="1">
+						android:layout_weight="1"
+						android:focusable="false">
 
 						<ImageView
 							android:id="@+id/video"
@@ -345,6 +349,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
+						android:focusable="false"
 						android:contentDescription="@string/content_description_audio_route"/>
 
 					<ImageView
