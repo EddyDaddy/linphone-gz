@@ -18,7 +18,8 @@
 		android:background="@color/colorF"
 		android:layout_width="match_parent"
 		android:layout_height="50dp"
-		android:layout_below="@id/status">
+		android:layout_below="@id/status"
+		android:focusable="false">
 
 		<TextView
 			android:text="@string/outgoing_call"
@@ -26,6 +27,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:paddingLeft="10dp"
+			android:focusable="false"
 			android:gravity="center"/>
 
 	</RelativeLayout>
@@ -36,12 +38,14 @@
 		android:layout_height="match_parent"
 		android:layout_above="@id/menu"
 		android:layout_below="@id/top_bar"
+		android:focusable="false"
 		android:paddingTop="10dp">
 
 		<LinearLayout
 			android:orientation="horizontal"
 			android:layout_centerHorizontal="true"
 			android:layout_centerVertical="true"
+			android:focusable="false"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 
@@ -50,6 +54,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_margin="5dp"
+				android:focusable="false"
 				android:gravity="center">
 
 				<ImageView
@@ -73,6 +78,7 @@
 				android:orientation="vertical"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:focusable="false"
 				android:layout_gravity="center_vertical">
 
 				<TextView
@@ -104,6 +110,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="0dip"
 		android:layout_weight="1"
+		android:focusable="false"
 		android:visibility="gone" />
 
 	<LinearLayout
@@ -121,6 +128,7 @@
 			android:contentDescription="@string/content_description_toggle_micro"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:focusable="true"
 			android:layout_weight="1"
 			android:padding="15dp"/>
 
@@ -131,16 +139,18 @@
 			android:contentDescription="@string/content_description_toggle_speaker"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:focusable="true"
 			android:layout_weight="1"
 			android:padding="20dp"/>
 
 		<ImageView
 			android:id="@+id/outgoing_hang_up"
 			android:src="@drawable/call_hangup"
-			android:background="@drawable/hangup"
+			android:background="@drawable/view_corner7_onfocus_bg"
 			android:contentDescription="@string/content_description_hang_up"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:focusable="true"
 			android:layout_weight="0.7"
 			android:padding="15dp"/>
 

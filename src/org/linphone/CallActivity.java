@@ -424,6 +424,7 @@ public class CallActivity extends LinphoneGenericActivity
 		// BottonBar
 		hangUp = (ImageView) findViewById(R.id.hang_up);
 		hangUp.setOnClickListener(this);
+		hangUp.requestFocus();
 		hangUp.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override

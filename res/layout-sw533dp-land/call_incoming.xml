@@ -113,6 +113,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
+			android:focusable="true"
 			android:padding="15dp"/>
 
 		<LinearLayout
@@ -149,11 +150,12 @@
 		<ImageView
 			android:id="@+id/accept"
 			android:src="@drawable/call_audio_start"
-			android:background="@drawable/call"
+			android:background="@drawable/view_corner7_onfocus_bg"
 			android:contentDescription="@string/content_description_accept"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
+			android:focusable="true"
 			android:padding="15dp"/>
 
 		<LinearLayout

@@ -118,6 +118,7 @@ public class CallOutgoingActivity extends LinphoneGenericActivity implements OnC
 		getWindow().addFlags(flags);
 
 		hangUp = (ImageView) findViewById(R.id.outgoing_hang_up);
+		hangUp.requestFocus();
 		hangUp.setOnClickListener(this);
 		hangUp.setOnFocusChangeListener(new OnFocusChangeListener() {
 			

@@ -91,6 +91,7 @@ public class CallIncomingActivity extends LinphoneGenericActivity implements Lin
 		//declineUnlock = (LinearLayout) findViewById(R.id.declineUnlock);
 
 		accept = (ImageView) findViewById(R.id.accept);
+		accept.requestFocus();
 		accept.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override

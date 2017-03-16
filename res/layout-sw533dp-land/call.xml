@@ -237,11 +237,12 @@
 					<ImageView
 						android:id="@+id/hang_up"
 						android:src="@drawable/call_hangup"
-						android:background="@drawable/hangup"
+						android:background="@drawable/view_corner7_onfocus_bg"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_weight="0.5"
 						android:padding="12dp"
+						android:focusable="true"
 						android:contentDescription="@string/content_description_hang_up"/>
 
 					<RelativeLayout
@@ -297,6 +298,7 @@
 							android:padding="20dp"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
+							android:focusable="true"
 							android:contentDescription="@string/content_description_switch_video"/>
 
 						<ProgressBar
@@ -319,6 +321,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
+						android:focusable="true"
 						android:contentDescription="@string/content_description_toggle_micro"/>
 
 					<ImageView
@@ -329,6 +332,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
+						android:focusable="true"
 						android:contentDescription="@string/content_description_toggle_speaker"/>
 
 					<ImageView
