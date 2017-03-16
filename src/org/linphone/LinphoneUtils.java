@@ -152,14 +152,15 @@ public final class LinphoneUtils {
 		}
 		if(keyCode==KeyEvent.KEYCODE_BACK){
 			AlertDialog.Builder builder = new Builder(activity);
-			builder.setMessage("确认注销当前账号吗？");
+			builder.setMessage("确认退出？");
 			builder.setTitle("提示");
 			builder.setPositiveButton("确定", new DialogInterface.OnClickListener() { // 设置确定按钮
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					LinphonePreferences.instance().deleteAccount(LinphonePreferences.instance().getDefaultAccountIndex());
-					LinphoneActivity.instance().refreshAccounts();
-					LinphoneActivity.instance().displayAssistant();
+//					LinphonePreferences.instance().deleteAccount(LinphonePreferences.instance().getDefaultAccountIndex());
+//					LinphoneActivity.instance().refreshAccounts();
+//					LinphoneActivity.instance().displayAssistant();
+					LinphoneActivity.instance().quit();
 					dialog.dismiss(); // 关闭dialog
 				}
 			});
