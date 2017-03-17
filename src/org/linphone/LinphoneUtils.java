@@ -154,7 +154,7 @@ public final class LinphoneUtils {
 			AlertDialog.Builder builder = new Builder(activity);
 			builder.setMessage("注销帐号或退出程序？");
 			builder.setTitle("提示");
-			builder.setPositiveButton("退出程序", new DialogInterface.OnClickListener() { // 设置确定按钮
+			builder.setNegativeButton("退出程序", new DialogInterface.OnClickListener() { // 设置确定按钮
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 //					LinphonePreferences.instance().deleteAccount(LinphonePreferences.instance().getDefaultAccountIndex());
