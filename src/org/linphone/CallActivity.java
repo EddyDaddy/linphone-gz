@@ -1412,7 +1412,7 @@ public class CallActivity extends LinphoneGenericActivity
 
 	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_MENU)
+		if (keyCode == KeyEvent.KEYCODE_BACK)
 		{
 			if(!mControlsLayout.isShown())
 			{
