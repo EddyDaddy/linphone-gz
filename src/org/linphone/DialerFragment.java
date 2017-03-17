@@ -23,7 +23,9 @@ import org.linphone.ui.AddressAware;
 import org.linphone.ui.AddressText;
 import org.linphone.ui.CallButton;
 import org.linphone.ui.EraseButton;
+import org.linphone.ui.Numpad;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -46,7 +48,7 @@ public class DialerFragment extends Fragment {
 	private static DialerFragment instance;
 	private static boolean isCallTransferOngoing = false;
 
-	private AddressAware numpad;
+	private Numpad numpad;
 	private AddressText mAddress;
 	private CallButton mCall;
 	private ImageView mAddContact;
@@ -108,12 +110,10 @@ public class DialerFragment extends Fragment {
 			}
 		}
 
-		numpad = (AddressAware) view.findViewById(R.id.numpad);
+		numpad = (Numpad) view.findViewById(R.id.numpad);
 		if (numpad != null) {
 			numpad.setAddressWidget(mAddress);
 		}
-
-	
 		mAddContact = (ImageView) view.findViewById(R.id.add_contact);
 		mAddContact.setEnabled(!(LinphoneActivity.isInstanciated() && LinphoneManager.getLc().getCallsNb() > 0));
 		mAddContact.setOnFocusChangeListener(new OnFocusChangeListener() {
@@ -221,7 +221,6 @@ public class DialerFragment extends Fragment {
 	public void onResume() {
 		super.onResume();
 		instance = this;
-
 		if (LinphoneActivity.isInstanciated()) {
 			LinphoneActivity.instance().selectMenu(FragmentsAvailable.DIALER);
 			LinphoneActivity.instance().updateDialerFragment(this);
@@ -315,5 +314,8 @@ public class DialerFragment extends Fragment {
 
 			LinphoneManager.getInstance().newOutgoingCall(mAddress);
 		}
+	}
+	public void setDigit(String num){
+		mAddress.append(num.trim());
 	}
 }

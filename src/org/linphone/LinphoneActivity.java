@@ -1484,6 +1484,46 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 				}
 			}
 		}
+		if(FragmentsAvailable.DIALER==currentFragment&&fragment!=null){
+		switch(keyCode){
+		case KeyEvent.KEYCODE_1:
+			((DialerFragment)fragment).setDigit("1");
+			break;
+		case KeyEvent.KEYCODE_2:
+			((DialerFragment)fragment).setDigit("2");
+			break;
+		case KeyEvent.KEYCODE_3:
+			((DialerFragment)fragment).setDigit("3");
+			break;
+		case KeyEvent.KEYCODE_4:
+			((DialerFragment)fragment).setDigit("4");
+			break;
+		case KeyEvent.KEYCODE_5:
+			((DialerFragment)fragment).setDigit("5");
+			break;
+		case KeyEvent.KEYCODE_6:
+			((DialerFragment)fragment).setDigit("6");
+			break;
+		case KeyEvent.KEYCODE_7:
+			((DialerFragment)fragment).setDigit("7");
+			break;
+		case KeyEvent.KEYCODE_8:
+			((DialerFragment)fragment).setDigit("8");
+			break;
+		case KeyEvent.KEYCODE_9:
+			((DialerFragment)fragment).setDigit("9");
+			break;
+		case KeyEvent.KEYCODE_0:
+			((DialerFragment)fragment).setDigit("0");
+			break;
+		case KeyEvent.KEYCODE_POUND:
+			((DialerFragment)fragment).setDigit("#");
+			break;
+		case KeyEvent.KEYCODE_STAR:
+			((DialerFragment)fragment).setDigit("*");
+			break;
+		}
+		}
 		return super.onKeyDown(keyCode, event);
 	}
 

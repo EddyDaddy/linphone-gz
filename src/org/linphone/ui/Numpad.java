@@ -38,6 +38,7 @@ import android.widget.LinearLayout;
 public class Numpad extends LinearLayout implements AddressAware {
 
 	private boolean mPlayDtmf;
+	private Digit digit1 ;
 	public void setPlayDtmf(boolean sendDtmf) {
 		this.mPlayDtmf = sendDtmf;
 	}
@@ -46,7 +47,8 @@ public class Numpad extends LinearLayout implements AddressAware {
 		super(context);
 		mPlayDtmf = playDtmf;
 		View view = LayoutInflater.from(context).inflate(R.layout.numpad, this);
-		Digit digit1 = (Digit)view.findViewById(R.id.Digit1);
+		digit1 = (Digit)view.findViewById(R.id.Digit1);
+		digit1.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 		digit1.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -63,7 +65,6 @@ public class Numpad extends LinearLayout implements AddressAware {
 			}
 		});
 		setLongClickable(true);
-		
 		onFinishInflate();
 	}
 
@@ -75,6 +76,8 @@ public class Numpad extends LinearLayout implements AddressAware {
         View view = LayoutInflater.from(context).inflate(R.layout.numpad, this);
 		setLongClickable(true);
 		Digit digit1 = (Digit)view.findViewById(R.id.Digit1);
+		digit1.requestFocus();
+		digit1.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 		digit1.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -297,5 +300,11 @@ public class Numpad extends LinearLayout implements AddressAware {
 
 		return views;
 	}
+	
+	public void setDightOnfocus(){
+		digit1.requestFocus();
+		digit1.setFocusable(true);
+	}
 
+    
 }
