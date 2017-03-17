@@ -127,7 +127,7 @@
                 android:focusable="true"
                 android:hint="请输入密码"
                 android:inputType="textPassword"
-                android:nextFocusDown="@id/assistant_domain"
+                android:nextFocusDown="@id/assistant_apply"
                 android:nextFocusLeft="@id/assistant_password"
                 android:nextFocusRight="@id/assistant_password"
                 android:nextFocusUp="@id/assistant_username"
@@ -157,13 +157,8 @@
                 style="@style/logined_et_style"
                 android:background="@drawable/round_corner_5"
                 android:contentDescription="@string/content_description_domain_field"
-                android:focusable="true"
                 android:hint="请输入IP"
                 android:inputType="textUri"
-                android:nextFocusDown="@id/assistant_apply"
-                android:nextFocusLeft="@id/assistant_domain"
-                android:nextFocusRight="@id/assistant_domain"
-                android:nextFocusUp="@id/assistant_password"
                 android:singleLine="true"
                 android:textColor="@color/colorB" />
 
@@ -251,7 +246,7 @@
                 android:focusable="true"
                 android:nextFocusDown="@id/assistant_apply"
                 android:nextFocusLeft="@id/assistant_apply"
-                android:nextFocusUp="@id/assistant_domain"
+                android:nextFocusUp="@id/assistant_password"
                 android:text="登录"
                 android:textColor="@color/colorB" />
 
@@ -268,7 +263,7 @@
                 android:nextFocusDown="@id/assistant_out"
                 android:nextFocusLeft="@id/assistant_apply"
                 android:nextFocusRight="@id/assistant_out"
-                android:nextFocusUp="@id/assistant_domain"
+                android:nextFocusUp="@id/assistant_password"
                 android:text="退出"
                 android:textColor="@color/colorB" />
         </LinearLayout>

@@ -173,12 +173,12 @@ public final class LinphoneUtils {
 					dialog.dismiss(); // 关闭dialog
 				}
 			});
-			builder.setNegativeButton("取消", new DialogInterface.OnClickListener() { // 设置取消按钮
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					dialog.dismiss();
-				}
-			});
+//			builder.setNegativeButton("取消", new DialogInterface.OnClickListener() { // 设置取消按钮
+//				@Override
+//				public void onClick(DialogInterface dialog, int which) {
+//					dialog.dismiss();
+//				}
+//			});
 			builder.create().show();
 			return true;
 		}

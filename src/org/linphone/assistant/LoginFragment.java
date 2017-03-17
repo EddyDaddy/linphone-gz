@@ -58,7 +58,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
 		password.addTextChangedListener(this);
 		domain = (EditText) view.findViewById(R.id.assistant_domain);
 		domain.addTextChangedListener(this);
-		domain.setVisibility(View.GONE);
+//		domain.setVisibility(View.GONE);
 		transports = (RadioGroup) view.findViewById(R.id.assistant_transports);
 		apply = (Button) view.findViewById(R.id.assistant_apply);
 		apply.setEnabled(false);
@@ -94,7 +94,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
 			transport = TransportType.LinphoneTransportUdp;
 			String domainStr = "10.21.5.4";
 //			domainStr = "222.211.83.186:5080";
-//			domainStr = domain.getText().toString();
+			domainStr = domain.getText().toString();
 			AssistantActivity.instance().genericLogIn(login.getText().toString(), password.getText().toString(), null, domainStr, transport);
 		}
 		if(id==R.id.assistant_out){
