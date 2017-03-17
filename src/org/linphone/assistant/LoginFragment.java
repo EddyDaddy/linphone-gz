@@ -75,7 +75,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
 		int id = v.getId();
 		
 		if (id == R.id.assistant_apply) {
-			if (login.getText() == null || login.length() == 0 || password.getText() == null || password.length() == 0 || domain.getText() == null || domain.length() == 0) {
+			if (login.getText() == null || login.length() == 0 || password.getText() == null || password.length() == 0) {
 				Toast.makeText(getActivity(), getString(R.string.first_launch_no_login_password), Toast.LENGTH_LONG).show();
 				return;
 			}
@@ -124,7 +124,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		apply.setEnabled(!login.getText().toString().isEmpty() && !password.getText().toString().isEmpty() && !domain.getText().toString().isEmpty());
+		apply.setEnabled(!login.getText().toString().isEmpty() && !password.getText().toString().isEmpty());
 	}
 
 	@Override
