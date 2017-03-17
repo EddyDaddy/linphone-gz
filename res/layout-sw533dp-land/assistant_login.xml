@@ -150,7 +150,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:focusable="true" >
+            android:focusable="true"
+            android:visibility="gone" >
 
             <EditText
                 android:id="@+id/assistant_domain"
