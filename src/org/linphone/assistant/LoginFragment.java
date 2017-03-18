@@ -91,7 +91,7 @@ public class LoginFragment extends Fragment implements OnClickListener, TextWatc
 //				}
 //			}
 			transport = TransportType.LinphoneTransportUdp;
-			String domainStr = "10.21.5.4";
+			String domainStr = "10.21.1.101";
 //			domainStr = "222.211.83.186:5080";
 //			domainStr = domain.getText().toString();
 			AssistantActivity.instance().genericLogIn(login.getText().toString(), password.getText().toString(), null, domainStr, transport);
