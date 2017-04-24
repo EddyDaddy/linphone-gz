@@ -186,6 +186,13 @@ public class DialerFragment extends Fragment {
 			}
 		});
 		callRecordBtn = (Button) view.findViewById(R.id.call_record_btn);
+		callRecordBtn.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				LinphoneActivity.instance().displayHistoryList();
+			}});
 		callRecordBtn.setOnFocusChangeListener(new OnFocusChangeListener() {
 
 			@Override

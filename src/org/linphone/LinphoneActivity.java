@@ -624,6 +624,13 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 	public void displayAbout() {
 		changeCurrentFragment(FragmentsAvailable.ABOUT, null);
 	}
+	
+	public void displayHistoryList() {
+		changeCurrentFragment(FragmentsAvailable.HISTORY_LIST, null);
+		history_selected.setVisibility(View.VISIBLE);
+		LinphoneManager.getLc().resetMissedCallsCount();
+		displayMissedCalls(0);
+	}
 
 	public void displayAssistant() {
 		startActivity(new Intent(LinphoneActivity.this, AssistantActivity.class));
