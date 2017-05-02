@@ -170,10 +170,12 @@ public class LinphoneActivity extends LinphoneGenericActivity implements OnClick
 //			finish();
 //			return;
 //		} else if (savedInstanceState == null && (useFirstLoginActivity && LinphonePreferences.instance().isFirstLaunch())) {
-			LinphonePreferences.instance().setIceEnabled(true);//---lile
+			LinphonePreferences.instance().setIceEnabled(false);//---lile
 			LinphonePreferences.instance().setDebugEnabled(true);//---lile
 			LinphonePreferences.instance().setPreferredVideoSize("720p");//---lile
 			LinphonePreferences.instance().setEchoCancellation(true);//---lile»ØÒôÏû³ý
+			LinphonePreferences.instance().setInitiateVideoCall(true);
+			LinphonePreferences.instance().setAutomaticallyAcceptVideoRequests(true);
 			if (LinphonePreferences.instance().getAccountCount() > 0) {
 				LinphonePreferences.instance().firstLaunchSuccessful();
 			} else {
