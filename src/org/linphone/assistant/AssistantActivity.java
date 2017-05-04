@@ -552,7 +552,7 @@ public class AssistantActivity extends Activity implements OnClickListener,
 			mPrefs.enabledFriendlistSubscription(getResources().getBoolean(R.bool.use_friendlist_subscription));
 
 			mPrefs.setStunServer(getString(R.string.default_stun));
-			mPrefs.setIceEnabled(true);
+			mPrefs.setIceEnabled(false);
 
 			accountCreator.setPassword(password);
 			accountCreator.setHa1(ha1);
