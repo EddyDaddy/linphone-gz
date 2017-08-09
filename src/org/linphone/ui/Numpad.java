@@ -26,9 +26,11 @@ import org.linphone.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnKeyListener;
 import android.widget.LinearLayout;
 
 /**
@@ -73,10 +75,21 @@ public class Numpad extends LinearLayout implements AddressAware {
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Numpad);
         mPlayDtmf = 1 == a.getInt(org.linphone.R.styleable.Numpad_play_dtmf, 1);
         a.recycle();
-        View view = LayoutInflater.from(context).inflate(R.layout.numpad, this);
+        final View view = LayoutInflater.from(context).inflate(R.layout.numpad, this);
 		setLongClickable(true);
-		Digit digit1 = (Digit)view.findViewById(R.id.Digit1);
+		final Digit digit1 = (Digit)view.findViewById(R.id.Digit1);
 		digit1.requestFocus();
+		final Digit digit2 = (Digit)view.findViewById(R.id.Digit2);
+		final Digit digit3 = (Digit)view.findViewById(R.id.Digit3);
+		final Digit digit4 = (Digit)view.findViewById(R.id.Digit4);
+		final Digit digit5 = (Digit)view.findViewById(R.id.Digit5);
+		final Digit digit6 = (Digit)view.findViewById(R.id.Digit6);
+		final Digit digit7 = (Digit)view.findViewById(R.id.Digit7);
+		final Digit digit8 = (Digit)view.findViewById(R.id.Digit8);
+		final Digit digit9 = (Digit)view.findViewById(R.id.Digit9);
+		final Digit digit00 = (Digit)view.findViewById(R.id.Digit00);
+		final Digit digitStar = (Digit)view.findViewById(R.id.DigitStar);
+		final Digit digitHash = (Digit)view.findViewById(R.id.DigitHash);
 		digit1.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 		digit1.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
@@ -93,7 +106,21 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit2 = (Digit)view.findViewById(R.id.Digit2);
+//		digit1.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit2.requestFocus();
+//				} else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit4.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit2.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -109,7 +136,24 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit3 = (Digit)view.findViewById(R.id.Digit3);
+//		digit2.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit3.requestFocus();
+//				} else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit1.requestFocus();
+//				}else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit5.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit3.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -125,7 +169,21 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit4 = (Digit)view.findViewById(R.id.Digit4);
+//		digit3.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit2.requestFocus();
+//				}else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit6.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit4.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -141,7 +199,24 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit5 = (Digit)view.findViewById(R.id.Digit5);
+//		digit4.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit5.requestFocus();
+//				} else if (keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit1.requestFocus();
+//				}else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit7.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit5.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -157,7 +232,28 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit6 = (Digit)view.findViewById(R.id.Digit6);
+//		digit5.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit6.requestFocus();
+//				} else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit4.requestFocus();
+//				}else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit8.requestFocus();
+//				}else if(keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN)
+//				{
+//					digit2.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit6.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -173,7 +269,25 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit7 = (Digit)view.findViewById(R.id.Digit7);
+//		digit6.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit5.requestFocus();
+//				}else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit9.requestFocus();
+//				}else if(keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN)
+//				{
+//					digit3.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit7.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -189,7 +303,25 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit8 = (Digit)view.findViewById(R.id.Digit8);
+//		digit7.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit8.requestFocus();
+//				} else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digitStar.requestFocus();
+//				}else if(keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN)
+//				{
+//					digit4.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit8.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -205,7 +337,28 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit9 = (Digit)view.findViewById(R.id.Digit9);
+//		digit8.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit9.requestFocus();
+//				} else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit7.requestFocus();
+//				}else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit00.requestFocus();
+//				}else if(keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN)
+//				{
+//					digit5.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit9.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -221,7 +374,25 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digit00 = (Digit)view.findViewById(R.id.Digit00);
+//		digit9.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit8.requestFocus();
+//				}else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digitHash.requestFocus();
+//				}else if(keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN)
+//				{
+//					digit6.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digit00.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -237,7 +408,25 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digitStar = (Digit)view.findViewById(R.id.DigitStar);
+//		digit00.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digitHash.requestFocus();
+//				} else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digitStar.requestFocus();
+//				}else if(keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN)
+//				{
+//					digit8.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digitStar.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -253,7 +442,25 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
-		Digit digitHash = (Digit)view.findViewById(R.id.DigitHash);
+//		digitStar.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit00.requestFocus();
+//				} else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digitStar.requestFocus();
+//				}else if(keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN)
+//				{
+//					digit7.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 		digitHash.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
@@ -269,6 +476,22 @@ public class Numpad extends LinearLayout implements AddressAware {
 				}
 			}
 		});
+//		digitHash.setOnKeyListener(new OnKeyListener() {
+//
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+//						&& event.getAction() == KeyEvent.ACTION_DOWN) {
+//					digit00.requestFocus();
+//				}else if(keyCode == KeyEvent.KEYCODE_DPAD_UP
+//						&& event.getAction() == KeyEvent.ACTION_DOWN)
+//				{
+//					digit9.requestFocus();
+//				}
+//				return true;
+//			}
+//		});
 	}
 
 	@Override
@@ -302,8 +525,8 @@ public class Numpad extends LinearLayout implements AddressAware {
 	}
 	
 	public void setDightOnfocus(){
-		digit1.requestFocus();
 		digit1.setFocusable(true);
+		digit1.requestFocus();
 	}
 
     

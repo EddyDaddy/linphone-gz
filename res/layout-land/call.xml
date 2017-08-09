@@ -195,6 +195,7 @@
 				android:visibility="gone"
 				android:layout_margin="10dp"
 				android:layout_above="@id/menu"
+				android:nextFocusDown="@+id/dialer"
 				android:layout_centerHorizontal="true"
 				android:layout_centerVertical="true"/>
 
@@ -203,7 +204,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="60dp"
 				android:layout_alignParentBottom="true"
-				android:orientation="horizontal">
+				android:orientation="horizontal"
+				android:focusable="true">
 
 				<LinearLayout
 					android:id="@+id/main_bar"
@@ -211,34 +213,45 @@
 					android:layout_width="match_parent"
 					android:layout_height="60dp"
 					android:layout_weight="1"
-					android:orientation="horizontal">
+					android:orientation="horizontal"
+					>
 
 					<ImageView
 						android:id="@+id/dialer"
 						android:src="@drawable/footer_dialer"
 						android:background="@color/colorC"
-						android:contentDescription="@string/content_description_numpad"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
-						android:padding="15dp" />
+						android:padding="15dp"
+						android:visibility="visible"
+						android:nextFocusUp="@+id/numpad"
+						android:nextFocusRight="@+id/hang_up"
+						android:focusable="true"
+						android:contentDescription="@string/content_description_numpad"/>
 
 					<ImageView
 						android:id="@+id/hang_up"
 						android:src="@drawable/call_hangup"
-						android:background="@drawable/hangup"
-						android:contentDescription="@string/content_description_hang_up"
+						android:background="@drawable/view_corner7_onfocus_bg"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_weight="0.5"
-						android:padding="12dp"/>
+						android:padding="12dp"
+						android:focusable="true"
+						android:nextFocusLeft="@+id/dialer"
+						android:nextFocusRight="@+id/video"
+						android:tint="@color/colorB"
+						android:contentDescription="@string/content_description_hang_up"/>
 
 					<RelativeLayout
 						android:background="@drawable/footer_button"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:layout_weight="1">
-
+						android:layout_weight="1"
+						android:visibility="gone"
+						android:focusable="false">
+						
 						<ImageView
 							android:id="@+id/chat"
 							android:src="@drawable/footer_chat"
@@ -247,8 +260,10 @@
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:padding="15dp"
+							android:visibility="gone"
+							android:focusable="false"
 							android:layout_centerInParent="true"/>
-
+	
 						<TextView
 							android:id="@+id/missed_chats"
 							android:background="@drawable/history_chat_indicator"
@@ -257,7 +272,8 @@
 							android:layout_height="20dp"
 							android:layout_margin="15dp"
 							android:gravity="center"
-							android:visibility="gone"/>
+							android:visibility="gone"
+							android:focusable="false"/>
 					</RelativeLayout>
 				</LinearLayout>
 
@@ -266,21 +282,27 @@
 					android:layout_width="match_parent"
 					android:layout_height="60dp"
 					android:layout_weight="1"
-					android:orientation="horizontal">
+					android:orientation="horizontal"
+					>
 
 					<RelativeLayout
+						android:background="@drawable/button_background"
 						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_weight="1">
+						android:layout_height="match_parent"
+						android:layout_weight="1"
+						>
 
 						<ImageView
 							android:id="@+id/video"
 							android:src="@drawable/camera_default"
 							android:background="@drawable/button_background"
-							android:contentDescription="@string/content_description_switch_video"
 							android:padding="20dp"
 							android:layout_width="match_parent"
-							android:layout_height="wrap_content"/>
+							android:layout_height="match_parent"
+							android:focusable="true"
+							android:nextFocusLeft="@+id/hang_up"
+							android:nextFocusRight="@+id/micro"
+							android:contentDescription="@string/content_description_switch_video"/>
 
 						<ProgressBar
 							android:id="@+id/video_in_progress"
@@ -288,6 +310,7 @@
 							android:layout_centerHorizontal="true"
 							android:layout_centerVertical="true"
 							android:visibility="gone"
+							android:focusable="false"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"/>
 
@@ -297,21 +320,26 @@
 						android:id="@+id/micro"
 						android:src="@drawable/micro_default"
 						android:background="@drawable/button_background"
-						android:contentDescription="@string/content_description_toggle_micro"
 						android:padding="10dp"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:layout_weight="1" />
+						android:layout_weight="1"
+						android:focusable="true"
+						android:nextFocusLeft="@+id/video"
+						android:nextFocusRight="@+id/speaker"
+						android:contentDescription="@string/content_description_toggle_micro"/>
 
 					<ImageView
 						android:id="@+id/speaker"
 						android:src="@drawable/speaker_default"
 						android:background="@drawable/button_background"
-						android:contentDescription="@string/content_description_toggle_speaker"
 						android:padding="15dp"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
-						android:layout_weight="1" />
+						android:layout_weight="1"
+						android:nextFocusLeft="@+id/micro"
+						android:focusable="true"
+						android:contentDescription="@string/content_description_toggle_speaker"/>
 
 					<ImageView
 						android:id="@+id/audio_route"

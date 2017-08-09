@@ -204,6 +204,7 @@
 				android:visibility="gone"
 				android:layout_margin="10dp"
 				android:layout_above="@id/menu"
+				android:nextFocusDown="@+id/dialer"
 				android:layout_centerHorizontal="true"
 				android:layout_centerVertical="true"/>
 
@@ -213,7 +214,7 @@
 				android:layout_height="60dp"
 				android:layout_alignParentBottom="true"
 				android:orientation="horizontal"
-				android:focusable="false">
+				android:focusable="true">
 
 				<LinearLayout
 					android:id="@+id/main_bar"
@@ -222,7 +223,7 @@
 					android:layout_height="60dp"
 					android:layout_weight="1"
 					android:orientation="horizontal"
-					android:focusable="false">
+					>
 
 					<ImageView
 						android:id="@+id/dialer"
@@ -233,7 +234,9 @@
 						android:layout_weight="1"
 						android:padding="15dp"
 						android:visibility="gone"
-						android:focusable="false"
+						android:nextFocusUp="@+id/numpad"
+						android:nextFocusRight="@+id/hang_up"
+						android:focusable="true"
 						android:contentDescription="@string/content_description_numpad"/>
 
 					<ImageView
@@ -245,6 +248,8 @@
 						android:layout_weight="0.5"
 						android:padding="12dp"
 						android:focusable="true"
+						android:nextFocusLeft="@+id/dialer"
+						android:nextFocusRight="@+id/video"
 						android:tint="@color/colorB"
 						android:contentDescription="@string/content_description_hang_up"/>
 
@@ -287,14 +292,14 @@
 					android:layout_height="60dp"
 					android:layout_weight="1"
 					android:orientation="horizontal"
-					android:focusable="false">
+					>
 
 					<RelativeLayout
 						android:background="@drawable/button_background"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
-						android:focusable="false">
+						>
 
 						<ImageView
 							android:id="@+id/video"
@@ -304,6 +309,8 @@
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
 							android:focusable="true"
+							android:nextFocusLeft="@+id/hang_up"
+							android:nextFocusRight="@+id/micro"
 							android:contentDescription="@string/content_description_switch_video"/>
 
 						<ProgressBar
@@ -327,6 +334,8 @@
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
 						android:focusable="true"
+						android:nextFocusLeft="@+id/video"
+						android:nextFocusRight="@+id/speaker"
 						android:contentDescription="@string/content_description_toggle_micro"/>
 
 					<ImageView
@@ -337,6 +346,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
+						android:nextFocusLeft="@+id/micro"
 						android:focusable="true"
 						android:contentDescription="@string/content_description_toggle_speaker"/>
 
