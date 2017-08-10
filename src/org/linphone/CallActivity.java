@@ -1590,6 +1590,10 @@ public class CallActivity extends LinphoneGenericActivity implements
 
 	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
+		if(numpad.getVisibility() == View.VISIBLE)
+		{
+			return true;
+		}
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			if (!mControlsLayout.isShown()) {
 				displayVideoCall(true);
@@ -1603,6 +1607,20 @@ public class CallActivity extends LinphoneGenericActivity implements
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
+		if(numpad.getVisibility() == View.VISIBLE)
+		{
+			if(keyCode == KeyEvent.KEYCODE_BACK)
+			{
+				hideOrDisplayNumpad();
+			}
+			else
+			{
+				numpad.setFocus(keyCode);
+			}
+			return true;
+		}
+		
 		if (LinphoneUtils.onKeyVolumeAdjust(keyCode))
 			return true;
 		if (LinphoneUtils.onKeyBackGoHome(this, keyCode, event))

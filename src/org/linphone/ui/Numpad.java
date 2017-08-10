@@ -41,6 +41,17 @@ public class Numpad extends LinearLayout implements AddressAware {
 
 	private boolean mPlayDtmf;
 	private Digit digit1 ;
+	private Digit digit2 ;
+	private Digit digit3 ;
+	private Digit digit4 ;
+	private Digit digit5 ;
+	private Digit digit6 ;
+	private Digit digit7 ;
+	private Digit digit8 ;
+	private Digit digit9 ;
+	private Digit digit00 ;
+	private Digit digitStar ;
+	private Digit digitHash ;
 	public void setPlayDtmf(boolean sendDtmf) {
 		this.mPlayDtmf = sendDtmf;
 	}
@@ -77,19 +88,19 @@ public class Numpad extends LinearLayout implements AddressAware {
         a.recycle();
         final View view = LayoutInflater.from(context).inflate(R.layout.numpad, this);
 		setLongClickable(true);
-		final Digit digit1 = (Digit)view.findViewById(R.id.Digit1);
+		digit1 = (Digit)view.findViewById(R.id.Digit1);
 		digit1.requestFocus();
-		final Digit digit2 = (Digit)view.findViewById(R.id.Digit2);
-		final Digit digit3 = (Digit)view.findViewById(R.id.Digit3);
-		final Digit digit4 = (Digit)view.findViewById(R.id.Digit4);
-		final Digit digit5 = (Digit)view.findViewById(R.id.Digit5);
-		final Digit digit6 = (Digit)view.findViewById(R.id.Digit6);
-		final Digit digit7 = (Digit)view.findViewById(R.id.Digit7);
-		final Digit digit8 = (Digit)view.findViewById(R.id.Digit8);
-		final Digit digit9 = (Digit)view.findViewById(R.id.Digit9);
-		final Digit digit00 = (Digit)view.findViewById(R.id.Digit00);
-		final Digit digitStar = (Digit)view.findViewById(R.id.DigitStar);
-		final Digit digitHash = (Digit)view.findViewById(R.id.DigitHash);
+		digit2 = (Digit)view.findViewById(R.id.Digit2);
+		digit3 = (Digit)view.findViewById(R.id.Digit3);
+		digit4 = (Digit)view.findViewById(R.id.Digit4);
+		digit5 = (Digit)view.findViewById(R.id.Digit5);
+		digit6 = (Digit)view.findViewById(R.id.Digit6);
+		digit7 = (Digit)view.findViewById(R.id.Digit7);
+		digit8 = (Digit)view.findViewById(R.id.Digit8);
+		digit9 = (Digit)view.findViewById(R.id.Digit9);
+		digit00 = (Digit)view.findViewById(R.id.Digit00);
+		digitStar = (Digit)view.findViewById(R.id.DigitStar);
+		digitHash = (Digit)view.findViewById(R.id.DigitHash);
 		digit1.setBackgroundResource(R.drawable.numpad_onfocus_bg);
 		digit1.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
@@ -529,5 +540,258 @@ public class Numpad extends LinearLayout implements AddressAware {
 		digit1.requestFocus();
 	}
 
-    
+    public void setFocus(int keyCode)
+    {
+    	switch(keyCode)
+    	{
+    	case KeyEvent.KEYCODE_DPAD_DOWN:
+    		if(digit1.isFocused())
+    		{
+    			digit4.setFocusable(true);
+    			digit4.requestFocus();
+    		}
+    		else if(digit2.isFocused())
+    		{
+    			digit5.setFocusable(true);
+    			digit5.requestFocus();
+    		}
+    		else if(digit3.isFocused())
+    		{
+    			digit6.setFocusable(true);
+    			digit6.requestFocus();
+    		}
+    		else if(digit4.isFocused())
+    		{
+    			digit7.setFocusable(true);
+    			digit7.requestFocus();
+    		}
+    		else if(digit5.isFocused())
+    		{
+    			digit8.setFocusable(true);
+    			digit8.requestFocus();
+    		}
+    		else if(digit6.isFocused())
+    		{
+    			digit9.setFocusable(true);
+    			digit9.requestFocus();
+    		}
+    		else if(digit7.isFocused())
+    		{
+    			digitStar.setFocusable(true);
+    			digitStar.requestFocus();
+    		}
+    		else if(digit8.isFocused())
+    		{
+    			digit00.setFocusable(true);
+    			digit00.requestFocus();
+    		}
+    		else if(digit9.isFocused())
+    		{
+    			digitHash.setFocusable(true);
+    			digitHash.requestFocus();
+    		}
+    		else if(digitStar.isFocused())
+    		{
+    			digit1.setFocusable(true);
+    			digit1.requestFocus();
+    		}
+    		else if(digit00.isFocused())
+    		{
+    			digit2.setFocusable(true);
+    			digit2.requestFocus();
+    		}
+    		else if(digitHash.isFocused())
+    		{
+    			digit3.setFocusable(true);
+    			digit3.requestFocus();
+    		}
+    		break;
+    	case KeyEvent.KEYCODE_DPAD_UP:
+    		if(digit1.isFocused())
+    		{
+    			digitStar.setFocusable(true);
+    			digitStar.requestFocus();
+    		}
+    		else if(digit2.isFocused())
+    		{
+    			digit00.setFocusable(true);
+    			digit00.requestFocus();
+    		}
+    		else if(digit3.isFocused())
+    		{
+    			digitHash.setFocusable(true);
+    			digitHash.requestFocus();
+    		}
+    		else if(digit4.isFocused())
+    		{
+    			digit1.setFocusable(true);
+    			digit1.requestFocus();
+    		}
+    		else if(digit5.isFocused())
+    		{
+    			digit2.setFocusable(true);
+    			digit2.requestFocus();
+    		}
+    		else if(digit6.isFocused())
+    		{
+    			digit3.setFocusable(true);
+    			digit3.requestFocus();
+    		}
+    		else if(digit7.isFocused())
+    		{
+    			digit4.setFocusable(true);
+    			digit4.requestFocus();
+    		}
+    		else if(digit8.isFocused())
+    		{
+    			digit5.setFocusable(true);
+    			digit5.requestFocus();
+    		}
+    		else if(digit9.isFocused())
+    		{
+    			digit6.setFocusable(true);
+    			digit6.requestFocus();
+    		}
+    		else if(digitStar.isFocused())
+    		{
+    			digit7.setFocusable(true);
+    			digit7.requestFocus();
+    		}
+    		else if(digit00.isFocused())
+    		{
+    			digit8.setFocusable(true);
+    			digit8.requestFocus();
+    		}
+    		else if(digitHash.isFocused())
+    		{
+    			digit9.setFocusable(true);
+    			digit9.requestFocus();
+    		}
+    		break;
+    	case KeyEvent.KEYCODE_DPAD_LEFT:
+    		if(digit1.isFocused())
+    		{
+    			digitHash.setFocusable(true);
+    			digitHash.requestFocus();
+    		}
+    		else if(digit2.isFocused())
+    		{
+    			digit1.setFocusable(true);
+    			digit1.requestFocus();
+    		}
+    		else if(digit3.isFocused())
+    		{
+    			digit2.setFocusable(true);
+    			digit2.requestFocus();
+    		}
+    		else if(digit4.isFocused())
+    		{
+    			digit3.setFocusable(true);
+    			digit3.requestFocus();
+    		}
+    		else if(digit5.isFocused())
+    		{
+    			digit4.setFocusable(true);
+    			digit4.requestFocus();
+    		}
+    		else if(digit6.isFocused())
+    		{
+    			digit5.setFocusable(true);
+    			digit5.requestFocus();
+    		}
+    		else if(digit7.isFocused())
+    		{
+    			digit6.setFocusable(true);
+    			digit6.requestFocus();
+    		}
+    		else if(digit8.isFocused())
+    		{
+    			digit7.setFocusable(true);
+    			digit7.requestFocus();
+    		}
+    		else if(digit9.isFocused())
+    		{
+    			digit8.setFocusable(true);
+    			digit8.requestFocus();
+    		}
+    		else if(digitStar.isFocused())
+    		{
+    			digit9.setFocusable(true);
+    			digit9.requestFocus();
+    		}
+    		else if(digit00.isFocused())
+    		{
+    			digitStar.setFocusable(true);
+    			digitStar.requestFocus();
+    		}
+    		else if(digitHash.isFocused())
+    		{
+    			digit00.setFocusable(true);
+    			digit00.requestFocus();
+    		}
+    		break;
+    	case KeyEvent.KEYCODE_DPAD_RIGHT:
+    		if(digit1.isFocused())
+    		{
+    			digit2.setFocusable(true);
+    			digit2.requestFocus();
+    		}
+    		else if(digit2.isFocused())
+    		{
+    			digit3.setFocusable(true);
+    			digit3.requestFocus();
+    		}
+    		else if(digit3.isFocused())
+    		{
+    			digit4.setFocusable(true);
+    			digit4.requestFocus();
+    		}
+    		else if(digit4.isFocused())
+    		{
+    			digit5.setFocusable(true);
+    			digit5.requestFocus();
+    		}
+    		else if(digit5.isFocused())
+    		{
+    			digit6.setFocusable(true);
+    			digit6.requestFocus();
+    		}
+    		else if(digit6.isFocused())
+    		{
+    			digit7.setFocusable(true);
+    			digit7.requestFocus();
+    		}
+    		else if(digit7.isFocused())
+    		{
+    			digit8.setFocusable(true);
+    			digit8.requestFocus();
+    		}
+    		else if(digit8.isFocused())
+    		{
+    			digit9.setFocusable(true);
+    			digit9.requestFocus();
+    		}
+    		else if(digit9.isFocused())
+    		{
+    			digitStar.setFocusable(true);
+    			digitStar.requestFocus();
+    		}
+    		else if(digitStar.isFocused())
+    		{
+    			digit00.setFocusable(true);
+    			digit00.requestFocus();
+    		}
+    		else if(digit00.isFocused())
+    		{
+    			digitHash.setFocusable(true);
+    			digitHash.requestFocus();
+    		}
+    		else if(digitHash.isFocused())
+    		{
+    			digit1.setFocusable(true);
+    			digit1.requestFocus();
+    		}
+    		break;
+    	}
+    }
 }
